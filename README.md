@@ -1,1 +1,1 @@
-# react-music-store
+# react-redux-shop
