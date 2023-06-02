@@ -1,0 +1,28 @@
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0 1 33.333%;
+}
+
+.supportBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.accountBlock{
+    display: flex;
+    flex-direction: column;
+}
+
+.accountBlock > h3,
+.linksBlock > h3{
+    margin-left: 2.2rem;
+}
