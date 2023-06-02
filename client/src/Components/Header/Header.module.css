@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+header > span{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+}
+li{
+    list-style-type: none;
+}
+header > ul{
+    display: flex;
+    flex: 0 1 25%;
+    justify-content: space-between;
+}
+.btnSection{
+    display: flex;
+    flex: 0 1 20%;
+    justify-content: space-between;
+    align-items: center
+}
+
+#inputSearch{
+    padding: 5px ;
+    border: none;
+    background: #F5F5F5;
+border-radius: 4px;
+
+}
+.wishlistBtn{
+    background: url('../../images/logos/Wishlist.svg') no-repeat 50%;
+    border: none;
+    width: 50px;
+    height: 40px;
+}
+.cartBtn{
+    background: url('../../images/logos/Cart1\ with\ buy.svg') no-repeat 50%;
+    border: none;
+    width: 50px;
+    height: 40px;
+}
