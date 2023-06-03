@@ -12,6 +12,9 @@ header{
     position: fixed;
     top: 0;
     left: 0;
+    border-bottom: 2px solid #c3c3c3;
+    background-color: #fff;
+
 }
 header > span{
     font-weight: 700;

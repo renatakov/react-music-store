@@ -1,3 +1,79 @@
 body{
     margin-top: 4rem;
 }
+.firstSection {
+    display: flex;
+}
+aside{
+    display: flex;
+    flex: 0 1 20%;
+
+}
+
+aside > nav{
+    padding-right: 2rem;
+    border-right: 2px solid #c3c3c3;
+}
+
+
+.firstSection__lastBlock{
+    margin-left: 1rem;
+    flex: 1 1 auto;
+    color: #fff;
+    background: url('https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907.jpg.landing-big_2x.jpg') no-repeat 20% 80%;
+    background-size: cover;
+    padding: 30px 1050px 10px 10px
+}
+
+.firstSection__lastBlock > span{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.firstSection__lastBlock > h2{
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    color: #FAFAFA;
+}
+
+.secondSection{
+    margin: 2rem;
+}
+.secondSection > h4{
+    color: #DB4444;
+
+}
+
+.secondSection > h4::before{
+    content: '';
+    position: absolute;
+    left: 1%;
+    width: 20px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #DB4444;
+}
+
+.secondSection > h3{
+    font-size: 36px;
+line-height: 48px;
+font-weight: 500;
+letter-spacing: 0.04em;
+}
+
+.secondSection__timer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+
+.secondSection__timer > span:nth-child(even){
+    color: #DB4444;
+    font-weight: 700;
+}
