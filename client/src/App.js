@@ -1,11 +1,171 @@
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer"
-import Home from "./Components/HomePage/HomePage";
+import Home, { MyContext } from "./Components/HomePage/HomePage";
+import { Provider } from "react-redux";
+import React, { createContext } from 'react';
+
+
+
+const initialState = {
+  products: [
+
+      {
+          id: 1,
+          title: 'HAVIT HV-G92 Gamepad',
+          stars: 5,
+          sale: true,
+          saleNum: 40,
+          reviews: 88,
+          img: 'g92-2-500x500 1.png',
+          price: 120
+      },
+      {
+          id: 2,
+          title: 'AK-900 Wired Keyboard',
+          stars: 4,
+          sale: true,
+          saleNum: 35,
+          reviews: 75,
+          img: 'ak-900-01-500x500 1.png',
+          price: 960
+      },
+      {
+          id: 3,
+          title: 'IPS LCD Gaming Monitor',
+          stars: 5,
+          sale: true,
+          saleNum: 30,
+          reviews: 99,
+          img: 'g27cq4-500x500 1.png',
+          price: 370
+      },
+      {
+          id: 4,
+          title: 'S-Series Comfort Chair ',
+          stars: 4,
+          sale: true,
+          saleNum: 25,
+          reviews: 99,
+          img: 'sam-moghadam-khamseh-kvmdsTrGOBM-unsplash 1.png',
+          price: 375
+      },
+      {
+          id: 5,
+          title: 'The north coat ',
+          stars: 5,
+          sale: false,
+          reviews: 65,
+          img: '672462_ZAH9D_5626_002_100_0000_Light-The-North-Face-x-Gucci-coat 1.png',
+          price: 260
+      },
+      {
+          id: 6,
+          title: 'Gucci duffle bag',
+          stars: 4,
+          sale: false,
+          reviews: 65,
+          img: '547953_9C2ST_8746_001_082_0000_Light-Gucci-Savoy-medium-duffle-bag 1.png',
+          price: 960
+      },
+      {
+          id: 7,
+          title: 'RGB liquid CPU Cooler',
+          stars: 4,
+          sale: false,
+          reviews: 65,
+          img: 'gammaxx-l240-argb-1-500x500 1.png',
+          price: 160
+      },
+      {
+          id: 8,
+          title: 'Small BookSelf',
+          stars: 5,
+          sale: false,
+          reviews: 65,
+          img: 'sam-moghadam-khamseh-L_7MQsHl_aU-unsplash 1.png',
+          price: 360
+      },
+      {
+          id: 9,
+          title: 'Breed Dry Dog Food',
+          stars: 3,
+          sale: false,
+          reviews: 35,
+          img: '71RdoeXxtrL 1.png',
+          price: 100
+      },
+      {
+          id: 10,
+          title: 'CANON EOS DSLR Camera',
+          stars: 4,
+          sale: false,
+          reviews: 65,
+          img: 'eos-250d-03-500x500 1.png',
+          price: 360
+      },
+      {
+          id: 11,
+          title: 'ASUS FHD Gaming Laptop',
+          stars: 5,
+          sale: false,
+          reviews: 325,
+          img: 'ideapad-gaming-3i-01-500x500 1.png',
+          price: 700
+      },
+      {
+          id: 12,
+          title: 'Curology Product Set ',
+          stars: 4,
+          sale: false,
+          reviews: 145,
+          img: 'curology-j7pKVQrTUsM-unsplash 1.png',
+          price: 500
+      },
+      {
+          id: 13,
+          title: 'Kids Electric Car',
+          stars: 5,
+          sale: false,
+          reviews: 65,
+          img: 'New-Mercedes-Benz-Gtr-Licensed-Ride-on-Car-Kids-Electric-Toy-Car 1.png',
+          price: 960
+      },
+      {
+          id: 14,
+          title: 'Jr. Zoom Soccer Cleats',
+          stars: 5,
+          sale: false,
+          reviews: 35,
+          img: 'Copa_Sense 1.png',
+          price: 1160
+      },
+      {
+          id: 15,
+          title: 'GP11 Shooter USB Gamepad',
+          stars: 4,
+          sale: false,
+          reviews: 55,
+          img: 'GP11_PRD3 1.png',
+          price: 660
+      },
+      {
+          id: 16,
+          title: 'Quilted Satin Jacketf',
+          stars: 4,
+          sale: false,
+          reviews: 55,
+          img: '698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png',
+          price: 660
+      },
+  ]
+}
 const App = () =>{
   return(
     <>
-    <Header/>
-    <Home/>
+      <Header />
+      <MyContext.Provider value={initialState}>
+        <Home />
+      </MyContext.Provider>
     <Footer/>
     </>
   )

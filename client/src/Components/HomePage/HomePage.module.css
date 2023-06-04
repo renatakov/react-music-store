@@ -77,3 +77,9 @@ letter-spacing: 0.04em;
     color: #DB4444;
     font-weight: 700;
 }
+
+.productsContainer{
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+}

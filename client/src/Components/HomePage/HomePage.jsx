@@ -1,13 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 import s from "./HomePage.module.css";
+import Product from "../Product/Product";
+const MyContext = createContext();
+const Home = (props) => {
+  const data = React.useContext(MyContext);
+  // console.log(props)
 
-const Home = () => {
+  // Используйте данные
   const [timer, setTimer] = useState({
     hours: 24,
     minutes: 59,
     seconds: 60,
   });
 
+  const getProductsWithSale = data.products
+  .filter((product) => product.sale === true)
+  .map((product) => (
+    <Product
+      key={product.id}
+      title={product.title}
+      img={product.img}
+      stars={product.stars}
+      price={product.price}
+      saleNum={product.saleNum}
+      reviews={product.reviews}
+    />
+  ));
+// console.log(getProductsWithSale)
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prevTimer) => {
@@ -29,7 +48,6 @@ const Home = () => {
       clearInterval(interval);
     };
   }, []);
-
   return (
     <>
       <section className={s.firstSection}>
@@ -63,9 +81,12 @@ const Home = () => {
           <span>:</span>
           <span>{timer.seconds}s</span>
         </div>
+        <div className={s.productsContainer}>
+        {getProductsWithSale}
+        </div>
       </section>
     </>
   );
 };
-
+export { MyContext }; 
 export default Home;
