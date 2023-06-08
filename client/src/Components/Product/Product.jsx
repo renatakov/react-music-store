@@ -9,9 +9,9 @@ const Product = (props) =>{
     }
     return(
         <div className={s.productContainer}>
-            <span>-{props.saleNum}%</span>
+            {props.saleNum > 0 && <span>-{props.saleNum}%</span>}
             <img src={`../../images/products/${props.img}`} alt=""/>
-            <h3>T{props.title}</h3>
+            <h3>{props.title}</h3>
             <p>{props.price}$</p>
             {reviewImg}
             <span>({props.reviews})</span>

@@ -26,6 +26,17 @@ const Home = (props) => {
       reviews={product.reviews}
     />
   ));
+  const getBestSellingProducts = data.products.filter((product)=> product.id >= 5 && product.id <= 8)
+  .map((product)=>(
+    <Product
+    key={product.id}
+    title={product.title}
+    img={product.img}
+    stars={product.stars}
+    price={product.price}
+    reviews={product.reviews}
+  />
+  ))
 // console.log(getProductsWithSale)
   useEffect(() => {
     const interval = setInterval(() => {
@@ -83,6 +94,13 @@ const Home = (props) => {
         </div>
         <div className={s.productsContainer}>
         {getProductsWithSale}
+        </div>
+      </section>
+      <section className={s.thirdSection}>
+        <h4>This Month</h4>
+        <h3>Best Selling Products</h3>
+        <div className={s.bestSellingProductsContainer}>
+          {getBestSellingProducts}
         </div>
       </section>
     </>

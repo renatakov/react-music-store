@@ -7,17 +7,17 @@ import React, { createContext } from 'react';
 
 
 const initialState = {
-  products: [
+        products: [
 
-      {
-          id: 1,
-          title: 'HAVIT HV-G92 Gamepad',
-          stars: 5,
-          sale: true,
-          saleNum: 40,
-          reviews: 88,
-          img: 'g92-2-500x500 1.png',
-          price: 120
+        {
+            id: 1,
+            title: 'HAVIT HV-G92 Gamepad',
+            stars: 5,
+            sale: true,
+            saleNum: 40,
+            reviews: 88,
+            img: 'g92-2-500x500 1.png',
+            price: 120
       },
       {
           id: 2,

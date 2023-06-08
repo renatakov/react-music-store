@@ -40,10 +40,12 @@ aside > nav{
     color: #FAFAFA;
 }
 
-.secondSection{
+.secondSection,
+.thirdSection{
     margin: 2rem;
 }
-.secondSection > h4{
+.secondSection > h4,
+.thirdSection > h4{
     color: #DB4444;
 
 }
@@ -58,7 +60,8 @@ aside > nav{
     background-color: #DB4444;
 }
 
-.secondSection > h3{
+.secondSection > h3,
+.thirdSection > h3{
     font-size: 36px;
 line-height: 48px;
 font-weight: 500;
@@ -78,8 +81,19 @@ letter-spacing: 0.04em;
     font-weight: 700;
 }
 
-.productsContainer{
+.productsContainer,
+.bestSellingProductsContainer{
     display: flex;
     justify-content: space-around;
     margin: 2rem;
+}
+
+.thirdSection > h4::before{
+    content: '';
+    position: absolute;
+    left: 1%;
+    width: 20px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #DB4444;
 }
