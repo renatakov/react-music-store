@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 import s from "./HomePage.module.css";
 import Product from "../Product/Product";
+import jbl from "../../images/HomePage/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
 const MyContext = createContext();
 const Home = (props) => {
   const data = React.useContext(MyContext);
@@ -22,6 +23,7 @@ const Home = (props) => {
       img={product.img}
       stars={product.stars}
       price={product.price}
+      sale={product.sale}
       saleNum={product.saleNum}
       reviews={product.reviews}
     />
@@ -33,6 +35,32 @@ const Home = (props) => {
     title={product.title}
     img={product.img}
     stars={product.stars}
+    sale={product.sale}
+    price={product.price}
+    reviews={product.reviews}
+  />
+  ))
+
+  const getOtherProductsPart1 = data.products.filter((product)=> product.id > 8 && product.id <= 12)
+  .map((product)=>(
+    <Product
+    key={product.id}
+    title={product.title}
+    img={product.img}
+    stars={product.stars}
+    sale={product.sale}
+    price={product.price}
+    reviews={product.reviews}
+  />
+  ))
+  const getOtherProductsPart2 = data.products.filter((product)=>  product.id > 12)
+  .map((product)=>(
+    <Product
+    key={product.id}
+    title={product.title}
+    img={product.img}
+    stars={product.stars}
+    sale={product.sale}
     price={product.price}
     reviews={product.reviews}
   />
@@ -101,6 +129,26 @@ const Home = (props) => {
         <h3>Best Selling Products</h3>
         <div className={s.bestSellingProductsContainer}>
           {getBestSellingProducts}
+        </div>
+      </section>
+      <section className={s.fourthSection}>
+        <div className={s.fourthSection__firstBlock}>
+        <h4>Categories</h4>
+        <h2>Enhance Your Music Experience</h2>
+        <button>Buy Now!</button>
+        </div>
+        <img src={jbl} alt=""/>
+      </section>
+      <section className={s.fifthSection}>
+      <h4>Our Products</h4>
+        <h3>Explore Our Products</h3>
+        <div className={s.otherProductsContainer}>
+          <div className={s.otherProductsContainer__firstBlock}>
+          {getOtherProductsPart1}
+          </div>
+          <div className={s.otherProductsContainer__secondBlock}>
+          {getOtherProductsPart2}
+          </div>
         </div>
       </section>
     </>

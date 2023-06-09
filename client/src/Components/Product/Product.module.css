@@ -1,3 +1,5 @@
+
+
 .productContainer > span:first-child{
     background: #DB4444;
 border-radius: 4px;
@@ -7,12 +9,18 @@ padding: 4px 12px;
 color: #FAFAFA;
 }
 
-.productContainer> p{
-    color: #DB4444;
-}
+
 
 .productContainer> span:last-child{
     color: #000000;
     font-size: 14px;
 opacity: 0.5;
+}
+
+.sale{
+    color: red;
+}
+
+.price{
+    color: #000000;
 }

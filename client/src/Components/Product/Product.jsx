@@ -1,6 +1,6 @@
 import s from './Product.module.css'
 const Product = (props) =>{
-
+    let prices = props.sale === true ? <p className={s.sale}>{props.price}$</p> : <p className={s.price}>{props.price}$</p>
     const reviewImg = []
     for(let i = 0; i < props.stars; i++){
         reviewImg.push(
@@ -10,9 +10,9 @@ const Product = (props) =>{
     return(
         <div className={s.productContainer}>
             {props.saleNum > 0 && <span>-{props.saleNum}%</span>}
-            <img src={`../../images/products/${props.img}`} alt=""/>
+            <img src={props.img} alt=""/>
             <h3>{props.title}</h3>
-            <p>{props.price}$</p>
+            {prices}
             {reviewImg}
             <span>({props.reviews})</span>
         </div>
