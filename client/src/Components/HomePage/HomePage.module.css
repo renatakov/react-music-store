@@ -47,7 +47,8 @@ aside > nav{
 }
 .secondSection > h4,
 .thirdSection > h4,
-.fifthSection > h4{
+.fifthSection > h4,
+.sixthSection > h4{
     color: #DB4444;
 
 }
@@ -64,7 +65,8 @@ aside > nav{
 
 .secondSection > h3,
 .thirdSection > h3,
-.fifthSection > h3{
+.fifthSection > h3,
+.sixthSection > h3{
     font-size: 36px;
 line-height: 48px;
 font-weight: 500;
@@ -163,4 +165,76 @@ justify-content: space-between;
 .otherProductsContainer__firstBlock > div ,
 .otherProductsContainer__secondBlock > div{
 margin: 2rem;
+}
+
+.sixthSection__container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    
+}
+
+.sixthSection > h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 35px;
+    margin-left: 1rem;
+    border-radius: 4px;
+    background-color: #DB4444;
+}
+
+.sixthSection > h4{
+    margin-left: 2rem;
+}
+
+.container__firstBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 1rem;
+    color: #efe9e9;
+    flex: 0 1 50%;
+    border-radius: 4px;
+    background-color: #000000;
+
+}
+
+.container__firstBlock > img{
+    width: 50%;
+}
+
+.container__secondBlock{
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+}
+
+.secondBlock__item1,
+.item2__firstBlock,
+.item2__secondBlock{
+    border-radius: 4px;
+    padding: 1rem;
+    color: #efe9e9;
+    background-color: #000000;
+}
+
+.secondBlock__item2{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.item2__firstBlock,
+.item2__secondBlock{
+    padding:1rem 0.5rem;
+}
+
+.item2__firstBlock{
+    margin-top: 1rem;
+}
+
+.item2__secondBlock{
+    padding-top: 2.1rem;
 }

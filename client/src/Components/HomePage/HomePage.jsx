@@ -2,6 +2,11 @@ import React, { useState, useEffect, useContext, createContext } from "react";
 import s from "./HomePage.module.css";
 import Product from "../Product/Product";
 import jbl from "../../images/HomePage/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
+import ps5 from "../../images/HomePage/ps5-slim-goedkope-playstation_large 1.png"
+import hatImg from "../../images/HomePage/attractive-woman-wearing-hat-posing-black-background 1.png"
+import speakersImg from "../../images/HomePage/69-694768_amazon-echo-png-clipart-transparent-amazon-echo-png 1.png"
+import perfumeImg from "../../images/HomePage/652e82cd70aa6522dd785109a455904c.png"
+
 const MyContext = createContext();
 const Home = (props) => {
   const data = React.useContext(MyContext);
@@ -151,6 +156,36 @@ const Home = (props) => {
           </div>
         </div>
       </section>
+      <div className={s.sixthSection}>
+      <h4>Featured</h4>
+        <h3>New Arrival</h3>
+        <div className={s.sixthSection__container}>
+          <div className={s.container__firstBlock}>
+            <img src={ps5} alt=""/>
+            <h5>PlayStation 5</h5>
+            <p>Black and White version of the PS5 coming out on sale.</p>
+          </div>
+          <div className={s.container__secondBlock}>
+            <div className={s.secondBlock__item1}>
+            <img src={hatImg} alt=""/>
+              <h5>Women’s Collections</h5>
+              <p>Featured woman collections that give you another vibe.</p>
+            </div>
+            <div className={s.secondBlock__item2}>
+              <div className={s.item2__firstBlock}>
+            <img src={speakersImg} alt=""/>
+            <h5>Speakers</h5>
+              <p>Amazon wireless speakers</p>
+            </div>
+            <div className={s.item2__secondBlock}>
+            <img src={perfumeImg} alt=""/>
+            <h5>Perfume</h5>
+              <p>GUCCI INTENSE OUD EDP</p>
+            </div>
+              </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
