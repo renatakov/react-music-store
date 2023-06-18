@@ -6,6 +6,9 @@ import ps5 from "../../images/HomePage/ps5-slim-goedkope-playstation_large 1.png
 import hatImg from "../../images/HomePage/attractive-woman-wearing-hat-posing-black-background 1.png"
 import speakersImg from "../../images/HomePage/69-694768_amazon-echo-png-clipart-transparent-amazon-echo-png 1.png"
 import perfumeImg from "../../images/HomePage/652e82cd70aa6522dd785109a455904c.png"
+import icon1 from "../../images/logos/icon-delivery.svg";
+import icon2 from "../../images/logos/Icon-Customer service.svg"
+import icon3 from "../../images/logos/Icon-secure.svg"
 
 const MyContext = createContext();
 const Home = (props) => {
@@ -156,7 +159,7 @@ const Home = (props) => {
           </div>
         </div>
       </section>
-      <div className={s.sixthSection}>
+      <section className={s.sixthSection}>
       <h4>Featured</h4>
         <h3>New Arrival</h3>
         <div className={s.sixthSection__container}>
@@ -185,7 +188,26 @@ const Home = (props) => {
               </div>
           </div>
         </div>
+      </section>
+      <section className={s.seventhSection}>
+      <div className={s.seventhSection__box}>
+        <img src={icon1} alt="" />
+
+        <h4>FREE AND FAST DELIVERY</h4>
+        <p>Free delivery for all orders over $140</p>
       </div>
+      <div className={s.seventhSection__box}>
+      <img src={icon2} alt="" />
+        <h4>FREE AND FAST DELIVERY</h4>
+        <p>Free delivery for all orders over $140</p>
+      </div>
+      <div className={s.seventhSection__box}>
+        
+      <img src={icon3} alt="" />
+        <h4>FREE AND FAST DELIVERY</h4>
+        <p>Free delivery for all orders over $140</p>
+      </div>
+      </section>
     </>
   );
 };

@@ -19,8 +19,8 @@ import product13 from "./images/products/New-Mercedes-Benz-Gtr-Licensed-Ride-on-
 import product14 from "./images/products/Copa_Sense 1.png";
 import product15 from "./images/products/GP11_PRD3 1.png";
 import product16 from "./images/products/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png";
-
-
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 const initialState = {
         products: [
@@ -178,11 +178,17 @@ const initialState = {
 const App = () =>{
   return(
     <>
+    {/* <BrowserRouter> */}
       <Header />
       <MyContext.Provider value={initialState}>
         <Home />
       </MyContext.Provider>
+    <Routes>
+        {/* <Route path="/" element={<Home/>}/> */}
+        <Route path="/aboutus" element={<AboutUs/>}/>
+    </Routes>
     <Footer/>
+    {/* </BrowserRouter> */}
     </>
   )
 }

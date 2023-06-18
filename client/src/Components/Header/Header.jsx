@@ -1,13 +1,15 @@
 import s from "./Header.module.css"
-
+import { Link } from "react-router-dom";
 const Header = () =>{
     return(
         <header>
             <span>Exclusive</span>
                 <ul>
                     <li>Home</li>
-                    <li>Contact</li>
-                    <li>About</li>
+                    <li>
+                        Contact
+                        </li>
+                        <Link to="/aboutus">About</Link>
                     <li>SignUp</li>
                 </ul>
                 <div className={s.btnSection}>

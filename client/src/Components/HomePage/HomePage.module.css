@@ -238,3 +238,23 @@ margin: 2rem;
 .item2__secondBlock{
     padding-top: 2.1rem;
 }
+
+.seventhSection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+}
+
+.seventhSection__box{
+display: flex;
+flex-flow: column nowrap;
+align-items: center;
+}
+
+.seventhSection__box > img{
+    background-color: #000000;
+    padding: 0.5rem;
+    border-radius: 3rem;
+    box-shadow: 0px 0px 0px 10px #686868;
+}
