@@ -1,5 +1,9 @@
 import s from "./AboutUs.module.css"
 import img1 from "../../images/AboutUs/Side Image.png"
+import icon1 from "../../images/logos/icon-shop.svg"
+import icon3 from "../../images/logos/Icon-Shopping bag.svg"
+import icon4 from "../../images/logos/Icon-Moneybag.svg"
+
 const AboutUs = () =>{
 return(
     <main>
@@ -10,6 +14,25 @@ return(
                 <p>Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.</p>
             </div>
             <img src={img1} alt="" />
+        </section>
+        <section className={s.aboutUsSecondSection}>
+            <div className={s.aboutUsSecondSection__container}>
+                <div className={s.aboutUsSecondSection__container_item}>
+                    <img src={icon1} alt="" />
+                    <span>10.5k</span>
+                    <p>Sallers active our site</p>
+                </div>
+                <div className={s.aboutUsSecondSection__container_item}>
+                    <img src={icon3} alt="" />
+                <span>45.5k</span>
+                    <p>Customer active in our site</p>
+                </div>
+                <div className={s.aboutUsSecondSection__container_item}>
+                    <img src={icon4} alt="" />
+                <span>25k</span>
+                    <p>Anual gross sale in our site</p>
+                </div>
+            </div>
         </section>
     </main>
 )

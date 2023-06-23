@@ -5,11 +5,11 @@ const Header = () =>{
         <header>
             <span>Exclusive</span>
                 <ul>
-                    <li>Home</li>
+                    <Link className={s.linkToHome} to="/">Home</Link>
                     <li>
                         Contact
                         </li>
-                        <Link to="/aboutus">About</Link>
+                        <Link className={s.linkToAbout} to="/aboutus">About</Link>
                     <li>SignUp</li>
                 </ul>
                 <div className={s.btnSection}>

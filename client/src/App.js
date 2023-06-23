@@ -178,17 +178,19 @@ const initialState = {
 const App = () =>{
   return(
     <>
-    {/* <BrowserRouter> */}
+    <BrowserRouter>
       <Header />
-      <MyContext.Provider value={initialState}>
-        <Home />
-      </MyContext.Provider>
     <Routes>
-        {/* <Route path="/" element={<Home/>}/> */}
+        <Route path="/" element={
+      <MyContext.Provider value={initialState}>
+            <Home/>
+            </MyContext.Provider>
+        }
+        />
         <Route path="/aboutus" element={<AboutUs/>}/>
     </Routes>
     <Footer/>
-    {/* </BrowserRouter> */}
+    </BrowserRouter>
     </>
   )
 }
