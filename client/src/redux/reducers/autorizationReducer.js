@@ -29,6 +29,7 @@ const initialState = {
 };
 
 const addAccount = (state) => {
+    console.log(state)
     return{
        ...state,
         accounts:[
@@ -46,6 +47,7 @@ const addAccount = (state) => {
 }
 
 const updateNewAccount = (state, action) => {
+    console.log(action)
     if(action.inputForm === "inputName"){
         return{
             ...state,
@@ -53,8 +55,10 @@ const updateNewAccount = (state, action) => {
                     ...state.accounts,
                 ],
                 newAcconut:{
+                    ...state.newAcconut,
                     id: state.accounts[state.accounts.length - 1].id + 1,
                     name: action.inputValue
+                    
                 }
         }
     }
@@ -65,6 +69,8 @@ const updateNewAccount = (state, action) => {
                     ...state.accounts,
                 ],
                 newAcconut:{
+                    ...state.newAcconut,
+
                     id: state.accounts[state.accounts.length - 1].id + 1,
                     email: action.inputValue
                 }
@@ -77,6 +83,8 @@ const updateNewAccount = (state, action) => {
                     ...state.accounts,
                 ],
                 newAcconut:{
+                    ...state.newAcconut,
+
                     id: state.accounts[state.accounts.length - 1].id + 1,
                     password: action.inputValue
                 }
@@ -87,10 +95,10 @@ const updateNewAccount = (state, action) => {
 export const authorizationReducer = (state = initialState, action) => {
     switch(action.type){
         case ADD_ACCOUNT:{
-            addAccount(state)
+            return addAccount(state)
         }
         case UPDATE_NEW_ACCOUNT:{
-            updateNewAccount(state, action)
+            return updateNewAccount(state, action)
         }
         default:{
             return state

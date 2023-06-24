@@ -21,7 +21,7 @@ import product15 from "./images/products/GP11_PRD3 1.png";
 import product16 from "./images/products/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import AboutUs from "./Components/AboutUs/AboutUs";
-import SignUp from "./Components/SignUp/SignUp";
+import AuthorizationContainer from "./redux/AuthorizationContainer";
 const initialState = {
         products: [
 
@@ -188,7 +188,7 @@ const App = () =>{
         }
         />
         <Route path="/aboutus" element={<AboutUs/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/signup" element={<AuthorizationContainer/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>
