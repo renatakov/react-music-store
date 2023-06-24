@@ -5,12 +5,12 @@ const Header = () =>{
         <header>
             <span>Exclusive</span>
                 <ul>
-                    <Link className={s.linkToHome} to="/">Home</Link>
+                    <Link className={s.linkTo} to="/">Home</Link>
                     <li>
                         Contact
                         </li>
-                        <Link className={s.linkToAbout} to="/aboutus">About</Link>
-                    <li>SignUp</li>
+                        <Link className={s.linkTo} to="/aboutus">About</Link>
+                    <Link className={s.linkTo} to="/signup">SignUp</Link>
                 </ul>
                 <div className={s.btnSection}>
             <input id={s.inputSearch} type="text" placeholder="Search"/>
