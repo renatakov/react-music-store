@@ -1,0 +1,17 @@
+.signUpSection{
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    margin: 0 0 2rem;
+}
+
+.signUpSection > img{
+    
+    width: 500px;
+}
+
+.signUpSection__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

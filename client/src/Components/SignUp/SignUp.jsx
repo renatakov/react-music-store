@@ -18,24 +18,23 @@ const SignUp = (props) => {
                 <h2>Create an account</h2>
                 <p>Enter your details below</p>
                 
-                <input onChange={()=>{
-        props.updateNewAccount("inputName", formRefs.name.current.value)
+                <input onChange={(e)=>{
+        props.updateNewAccount("inputName", e.target.value)
 
-                }} ref={formRefs.name} type="text" placeholder="Name"/>
-                <input onChange={()=>{
-        props.updateNewAccount("inputEmail", formRefs.email.current.value)
+                }}  type="text" placeholder="Name"/>
+                <input onChange={(e)=>{
+        props.updateNewAccount("inputEmail", e.target.value)
 
-                }} ref={formRefs.email} type="email" placeholder="Email"/>
-                <input onChange={()=>{
-        props.updateNewAccount("inputPassword", formRefs.password.current.value)
+                }}  type="email" placeholder="Email"/>
+                <input onChange={(e)=>{
+        props.updateNewAccount("inputPassword", e.target.value)
 
-                }} ref={formRefs.password} type="password" placeholder="Password"/>
+                }}  type="password" placeholder="Password"/>
                 <button onClick={
-                    ()=>{
+                    ()=>
                         props.addAccount()
-                    // console.log(props.accounts)
-                    }
-                    } ref={formRefs.button}>Create an account</button>
+                    
+                    } >Create an account</button>
                 <p>
                     Already have an account? Login
                 </p>

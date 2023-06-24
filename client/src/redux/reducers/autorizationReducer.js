@@ -51,9 +51,7 @@ const updateNewAccount = (state, action) => {
     if(action.inputForm === "inputName"){
         return{
             ...state,
-                accounts:[
-                    ...state.accounts,
-                ],
+                
                 newAcconut:{
                     ...state.newAcconut,
                     id: state.accounts[state.accounts.length - 1].id + 1,
@@ -65,9 +63,7 @@ const updateNewAccount = (state, action) => {
     if(action.inputForm === "inputEmail"){
         return{
             ...state,
-                accounts:[
-                    ...state.accounts,
-                ],
+                
                 newAcconut:{
                     ...state.newAcconut,
 
@@ -76,12 +72,10 @@ const updateNewAccount = (state, action) => {
                 }
         }
     }
-    if(action.inputForm === "inpuPassword"){
+    if(action.inputForm === "inputPassword"){
         return{
             ...state,
-                accounts:[
-                    ...state.accounts,
-                ],
+                
                 newAcconut:{
                     ...state.newAcconut,
 
