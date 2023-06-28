@@ -1,5 +1,5 @@
 import s from "./Footer.module.css"
-
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer>
@@ -13,7 +13,7 @@ const Footer = () => {
                 <h3>Account</h3>
                 <ul>
                     <li><a href="#">My Account</a></li>
-                    <li><a href="#">Login</a>/<a href="#">Register</a></li>
+                    <li><Link to="/login">Login</Link>/<a href="#">Register</a></li>
                     <li><a href="#"></a></li>
                     <li><a href="#">Cart</a></li>
                     <li><a href="#">Wishlist</a></li>

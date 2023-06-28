@@ -3,6 +3,7 @@ import Footer from "./Components/Footer/Footer"
 import Home, { MyContext } from "./Components/HomePage/HomePage";
 import { Provider } from "react-redux";
 import React, { createContext } from 'react';
+import LoginContainer from "./redux/LoginContainer";
 import product1 from "./images/products/g92-2-500x500 1.png";
 import product2 from "./images/products/ak-900-01-500x500 1.png";
 import product3 from "./images/products/g27cq4-500x500 1.png";
@@ -189,6 +190,8 @@ const App = () =>{
         />
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/signup" element={<AuthorizationContainer/>}/>
+        <Route path="/login" element={<LoginContainer/>}/>
+
     </Routes>
     <Footer/>
     </BrowserRouter>

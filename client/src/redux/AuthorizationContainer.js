@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { addAccountAC, updateNewAccountAC } from "./reducers/autorizationReducer";
+import { addAccountAC, updateNewAccountAC, loginToAccountAC } from "./reducers/autorizationReducer";
 import SignUp from "../Components/SignUp/SignUp";
+import Login from "../Components/Login/Login";
 
 const mapStateToProps = (state) => ({
     accounts: state.authorization.accounts
@@ -8,7 +9,8 @@ const mapStateToProps = (state) => ({
 
 const mapStateToDispatch = {
     addAccount: addAccountAC, 
-    updateNewAccount: updateNewAccountAC 
+    updateNewAccount: updateNewAccountAC,
+    loginToAccount:loginToAccountAC
 };
 
 

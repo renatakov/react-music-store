@@ -86,6 +86,16 @@ const updateNewAccount = (state, action) => {
     }
 }
 
+const loginToAccount = (state, action) => {
+if(action.inputForm === "inputEmail" && action.inputForm === "inputPassword"){
+    const loginFilter = state.accounts.filter((item)=>item.email === action.inputValue && item.password === action.inputValue)
+    return{
+        ...state,
+        accounts:[...state.loginFilter],
+    }
+}
+}
+
 export const authorizationReducer = (state = initialState, action) => {
     switch(action.type){
         case ADD_ACCOUNT:{
@@ -93,6 +103,9 @@ export const authorizationReducer = (state = initialState, action) => {
         }
         case UPDATE_NEW_ACCOUNT:{
             return updateNewAccount(state, action)
+        }
+        case LOGIN:{
+            return loginToAccount(state, action)
         }
         default:{
             return state
@@ -115,6 +128,15 @@ export const updateNewAccountAC = (inputForm, inputValue) =>
 (
     {
         type: UPDATE_NEW_ACCOUNT,
+        inputForm,
+        inputValue
+    }
+)
+
+export const loginToAccountAC = (inputForm, inputValue) => 
+(
+    {
+        type: LOGIN,
         inputForm,
         inputValue
     }

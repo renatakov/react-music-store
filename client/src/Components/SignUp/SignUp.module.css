@@ -15,3 +15,26 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.signUpSection__block > h2{
+    font-weight: 700;
+}
+
+.signUpSection__block > input{
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.signUpSection__block > button{
+    background-color: #DB4444;
+    border: none;
+    color: #fafafa;
+    font-weight: 300;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.linkToLogin{
+    text-decoration: underline;
+    color: black;
+}

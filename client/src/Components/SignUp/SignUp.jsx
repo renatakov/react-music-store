@@ -1,14 +1,9 @@
 import s from "./SignUp.module.css"
 import img1 from "../../images/authorizaion/dl.beatsnoop 1.png"
-import React, { useRef } from "react"
+import { Link } from "react-router-dom"
 const SignUp = (props) => {
     console.log(props)
-    const formRefs = {
-        name: useRef(null),
-        email:useRef(null),
-        password: useRef(null),
-        button: useRef(null)
-    }
+
 
 
     return(
@@ -36,7 +31,7 @@ const SignUp = (props) => {
                     
                     } >Create an account</button>
                 <p>
-                    Already have an account? Login
+                    Already have an account? <Link className={s.linkToLogin} to="/login">Login</Link>
                 </p>
             </div>
         </section>
