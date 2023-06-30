@@ -1,6 +1,7 @@
 import s from './Product.module.css'
+
 const Product = (props) =>{
-    
+
     let prices = props.sale === true ? <p className={s.sale}>{props.price}$</p> : <p className={s.price}>{props.price}$</p>
     const reviewImg = []
     for(let i = 0; i < props.stars; i++){
@@ -21,7 +22,7 @@ const Product = (props) =>{
             {prices}
             {reviewImg}
             <span>({props.reviews})</span>
-            <button onClick={cartBtn()} className={s.addToCartBtn}>Add To Cart</button>
+            <button  onClick={cartBtn} className={s.addToCartBtn}>Add To Cart</button>
         </div>
         
     )

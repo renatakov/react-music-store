@@ -1,5 +1,5 @@
-import product2 from "../../images/products/ak-900-01-500x500 1.png";
 import product1 from "../../images/products/g92-2-500x500 1.png";
+import product2 from "../../images/products/ak-900-01-500x500 1.png";
 import product3 from "../../images/products/g27cq4-500x500 1.png";
 import product4 from "../../images/products/sam-moghadam-khamseh-kvmdsTrGOBM-unsplash 1.png";
 import product5 from "../../images/products/672462_ZAH9D_5626_002_100_0000_Light-The-North-Face-x-Gucci-coat 1.png";
@@ -175,12 +175,19 @@ cartItems:[]
 }
 
 const addToCart = (state, action) => {
-const productsInCart = state.products.filter(item=>item.id === action.btnId)
-return{
-    ...state,
-    cartItems:[...productsInCart]
-}
-}
+    const productsInCart= state.products.filter(item => item.id === action.btnId); // Найти товар по id
+    if(productsInCart.length > 0){
+
+        return {
+            ...state,
+          cartItems: [...state.cartItems, ...productsInCart] // Добавить товар в корзину
+        };
+    } else{
+
+        return state; // Возвращать исходное состояние, если товар не найден
+    }
+    
+    };
 
 export const productsReducer = (state = initialState, action) => {
     switch (action.type){

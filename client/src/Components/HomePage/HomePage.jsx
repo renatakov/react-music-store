@@ -35,6 +35,8 @@ const Home = (props) => {
       saleNum={product.saleNum}
       reviews={product.reviews}
       addToCart={props.addToCart}
+    cart={props.cart}
+
     />
   ));
   const getBestSellingProducts = props.products.filter((product)=> product.id >= 5 && product.id <= 8)
@@ -48,6 +50,7 @@ const Home = (props) => {
     price={product.price}
     reviews={product.reviews}
     addToCart={props.addToCart}
+    cart={props.cart}
 
   />
   ))
@@ -63,6 +66,7 @@ const Home = (props) => {
     price={product.price}
     reviews={product.reviews}
     addToCart={props.addToCart}
+    cart={props.cart}
 
   />
   ))
@@ -77,7 +81,7 @@ const Home = (props) => {
     price={product.price}
     reviews={product.reviews}
     addToCart={props.addToCart}
-    cart={props.cartItems}
+    cart={props.cart}
   />
   ))
 // console.log(getProductsWithSale)
