@@ -3,7 +3,7 @@ import { loginToAccountAC } from "./reducers/autorizationReducer";
 import Login from "../Components/Login/Login";
 
 const mapStateToProps = (state) => ({
-    accounts: state.authorization.accounts
+    accounts: state.authorization.accounts,
 })
 
 const mapDispatchToProps = {

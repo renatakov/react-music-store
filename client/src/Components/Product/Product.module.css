@@ -9,18 +9,24 @@ padding: 4px 12px;
 color: #FAFAFA;
 }
 
-
-
-.productContainer> span:last-child{
-    color: #000000;
-    font-size: 14px;
-opacity: 0.5;
-}
-
 .sale{
     color: red;
 }
 
 .price{
     color: #000000;
+}
+
+.addToCartBtn{
+    color: #FAFAFA;
+    background-color: #000000;
+    border: none;
+    padding: 0px 70px;
+    display: none;
+}
+
+.productContainer:hover > .addToCartBtn{
+    display: block;
+    transform: translateY(-129px);
+    transition: 2s;
 }

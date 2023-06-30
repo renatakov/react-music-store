@@ -10,9 +10,9 @@ import icon1 from "../../images/logos/icon-delivery.svg";
 import icon2 from "../../images/logos/Icon-Customer service.svg"
 import icon3 from "../../images/logos/Icon-secure.svg"
 
-const MyContext = createContext();
+
 const Home = (props) => {
-  const data = React.useContext(MyContext);
+
   // console.log(props)
 
   // Используйте данные
@@ -22,7 +22,7 @@ const Home = (props) => {
     seconds: 60,
   });
 
-  const getProductsWithSale = data.products
+  const getProductsWithSale = props.products
   .filter((product) => product.sale === true)
   .map((product) => (
     <Product
@@ -34,9 +34,10 @@ const Home = (props) => {
       sale={product.sale}
       saleNum={product.saleNum}
       reviews={product.reviews}
+      addToCart={props.addToCart}
     />
   ));
-  const getBestSellingProducts = data.products.filter((product)=> product.id >= 5 && product.id <= 8)
+  const getBestSellingProducts = props.products.filter((product)=> product.id >= 5 && product.id <= 8)
   .map((product)=>(
     <Product
     key={product.id}
@@ -46,10 +47,12 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
+    addToCart={props.addToCart}
+
   />
   ))
 
-  const getOtherProductsPart1 = data.products.filter((product)=> product.id > 8 && product.id <= 12)
+  const getOtherProductsPart1 = props.products.filter((product)=> product.id > 8 && product.id <= 12)
   .map((product)=>(
     <Product
     key={product.id}
@@ -59,9 +62,11 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
+    addToCart={props.addToCart}
+
   />
   ))
-  const getOtherProductsPart2 = data.products.filter((product)=>  product.id > 12)
+  const getOtherProductsPart2 = props.products.filter((product)=>  product.id > 12)
   .map((product)=>(
     <Product
     key={product.id}
@@ -71,6 +76,8 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
+    addToCart={props.addToCart}
+    cart={props.cartItems}
   />
   ))
 // console.log(getProductsWithSale)
@@ -211,5 +218,5 @@ const Home = (props) => {
     </>
   );
 };
-export { MyContext }; 
+
 export default Home;

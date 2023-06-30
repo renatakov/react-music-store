@@ -9,14 +9,14 @@ const initialState = {
             name:"Renata",
             email: "renatakov1010@gmail.com",
             password: "Admin1234@",
-            address: "Kingston 12, United States"
+            address: "Kingston 12, United States",
         },
         {
             id:2,
             name:"John",
             email: "john123@gmail.com",
             password: "qwerty345",
-            address: "Wall Street, London"
+            address: "Wall Street, London",
         }
     ],
     newAcconut:{
@@ -24,8 +24,10 @@ const initialState = {
         name:'',
         email:'',
         password:'',
-        address: ''
-    }
+        address: '',
+    },
+    
+
 };
 
 const addAccount = (state) => {
@@ -41,7 +43,7 @@ const addAccount = (state) => {
             name:'',
             email:'',
             password:'',
-            address: ''
+            address: '',
         }
     }
 }
@@ -87,13 +89,22 @@ const updateNewAccount = (state, action) => {
 }
 
 const loginToAccount = (state, action) => {
-if(action.inputForm === "inputEmail" && action.inputForm === "inputPassword"){
-    const loginFilter = state.accounts.filter((item)=>item.email === action.inputValue && item.password === action.inputValue)
-    return{
-        ...state,
-        accounts:[...state.loginFilter],
+    const loginFilter = state.accounts.filter((account) => account.email === action.accountEmail && account.password === action.accountPassword)
+    if(loginFilter.length > 0){
+        return{
+            ...state,
+            accounts:[
+                ...loginFilter,
+                
+            ]
+        }
+    } else{
+        return{
+            ...state
+        }
     }
-}
+    
+    
 }
 
 export const authorizationReducer = (state = initialState, action) => {
@@ -133,11 +144,11 @@ export const updateNewAccountAC = (inputForm, inputValue) =>
     }
 )
 
-export const loginToAccountAC = (inputForm, inputValue) => 
+export const loginToAccountAC = (accountEmail, accountPassword) => 
 (
     {
         type: LOGIN,
-        inputForm,
-        inputValue
+        accountEmail,
+        accountPassword
     }
 )

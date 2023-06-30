@@ -15,6 +15,10 @@ import product14 from "../../images/products/Copa_Sense 1.png";
 import product15 from "../../images/products/GP11_PRD3 1.png";
 import product16 from "../../images/products/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png";
 
+
+const ADD_TO_CART = "ADD_TO_CART"
+const ADD_TO_WISHLIST = "ADD_TO_WISHLIST"
+
 const initialState = {
     products: [
 
@@ -166,5 +170,35 @@ const initialState = {
       img: product16,
       price: 660
   },
-]
+],
+cartItems:[]
 }
+
+const addToCart = (state, action) => {
+const productsInCart = state.products.filter(item=>item.id === action.btnId)
+return{
+    ...state,
+    cartItems:[...productsInCart]
+}
+}
+
+export const productsReducer = (state = initialState, action) => {
+    switch (action.type){
+        case ADD_TO_CART:{
+            return addToCart(state, action);
+        }
+        default:{
+            return state;
+        }
+    }
+}
+
+export const addToCartAC = (btnId) =>({
+type: ADD_TO_CART,
+btnId
+})
+
+export const addToWishlistAC = (product) =>({
+    type: ADD_TO_WISHLIST,
+    product
+    })

@@ -23,6 +23,7 @@ import product16 from "./images/products/698717_Z8A1X_3475_001_100_0000_Light-Re
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AuthorizationContainer from "./redux/AuthorizationContainer";
+import ProductsContainer from "./redux/ProductsContainer";
 const initialState = {
         products: [
 
@@ -183,10 +184,7 @@ const App = () =>{
       <Header />
     <Routes>
         <Route path="/" element={
-      <MyContext.Provider value={initialState}>
-            <Home/>
-            </MyContext.Provider>
-        }
+            <ProductsContainer/>}
         />
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/signup" element={<AuthorizationContainer/>}/>
