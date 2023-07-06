@@ -31,36 +31,36 @@ const initialState = {
         reviews: 88,
         img: product1,
         price: 120
-  },
-  {
-      id: 2,
-      title: 'AK-900 Wired Keyboard',
-      stars: 4,
-      sale: true,
-      saleNum: 35,
-      reviews: 75,
-      img: product2,
-      price: 960
-  },
-  {
-      id: 3,
-      title: 'IPS LCD Gaming Monitor',
-      stars: 5,
-      sale: true,
-      saleNum: 30,
-      reviews: 99,
-      img: product3,
-      price: 370
-  },
-  {
-      id: 4,
-      title: 'S-Series Comfort Chair ',
-      stars: 4,
-      sale: true,
-      saleNum: 25,
-      reviews: 99,
-      img: product4,
-      price: 375
+    },
+    {
+        id: 2,
+        title: 'AK-900 Wired Keyboard',
+        stars: 4,
+        sale: true,
+        saleNum: 35,
+        reviews: 75,
+        img: product2,
+        price: 960
+    },
+    {
+        id: 3,
+        title: 'IPS LCD Gaming Monitor',
+        stars: 5,
+        sale: true,
+        saleNum: 30,
+        reviews: 99,
+        img: product3,
+        price: 370
+    },
+    {
+        id: 4,
+        title: 'S-Series Comfort Chair ',
+        stars: 4,
+        sale: true,
+        saleNum: 25,
+        reviews: 99,
+        img: product4,
+        price: 375
   },
   {
       id: 5,
@@ -175,16 +175,15 @@ cartItems:[]
 }
 
 const addToCart = (state, action) => {
-    const productsInCart= state.products.filter(item => item.id === action.btnId); // Найти товар по id
+    const productsInCart= state.products.filter(item => item.id === action.btnId); 
     if(productsInCart.length > 0){
 
         return {
             ...state,
-          cartItems: [...state.cartItems, ...productsInCart] // Добавить товар в корзину
+            cartItems: [ ...productsInCart] 
         };
     } else{
-
-        return state; // Возвращать исходное состояние, если товар не найден
+        return state; 
     }
     
     };

@@ -11,7 +11,7 @@ const Product = (props) =>{
     }
     const cartBtn = () => {
         props.addToCart(props.id)
-        // console.log(props.cart)
+        console.log(props.cart)
     }
     return(
         
