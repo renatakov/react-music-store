@@ -1,7 +1,7 @@
 import s from './Product.module.css'
 
 const Product = (props) =>{
-
+    // console.log(props.products)
     let prices = props.sale === true ? <p className={s.sale}>{props.price}$</p> : <p className={s.price}>{props.price}$</p>
     const reviewImg = []
     for(let i = 0; i < props.stars; i++){

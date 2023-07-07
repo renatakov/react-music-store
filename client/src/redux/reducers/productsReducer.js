@@ -175,12 +175,11 @@ cartItems:[]
 }
 
 const addToCart = (state, action) => {
-    const productsInCart= state.products.filter(item => item.id === action.btnId); 
+    const productsInCart = state.products.filter(item => item.id === action.btnId); 
     if(productsInCart.length > 0){
-
         return {
             ...state,
-            cartItems: [ ...productsInCart] 
+            cartItems: [...productsInCart] 
         };
     } else{
         return state; 

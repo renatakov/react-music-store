@@ -26,6 +26,7 @@ const Home = (props) => {
   .filter((product) => product.sale === true)
   .map((product) => (
     <Product
+    id={product.id}
       key={product.id}
       title={product.title}
       img={product.img}
@@ -42,6 +43,8 @@ const Home = (props) => {
   const getBestSellingProducts = props.products.filter((product)=> product.id >= 5 && product.id <= 8)
   .map((product)=>(
     <Product
+    id={product.id}
+
     key={product.id}
     title={product.title}
     img={product.img}
@@ -58,6 +61,8 @@ const Home = (props) => {
   const getOtherProductsPart1 = props.products.filter((product)=> product.id > 8 && product.id <= 12)
   .map((product)=>(
     <Product
+    id={product.id}
+
     key={product.id}
     title={product.title}
     img={product.img}
@@ -73,6 +78,8 @@ const Home = (props) => {
   const getOtherProductsPart2 = props.products.filter((product)=>  product.id > 12)
   .map((product)=>(
     <Product
+    id={product.id}
+
     key={product.id}
     title={product.title}
     img={product.img}
@@ -106,6 +113,7 @@ const Home = (props) => {
       clearInterval(interval);
     };
   }, []);
+  
   return (
     <>
       <section className={s.firstSection}>
