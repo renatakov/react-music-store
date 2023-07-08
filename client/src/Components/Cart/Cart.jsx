@@ -1,5 +1,5 @@
 import Product from "../Product/Product"
-
+import s from "./Cart.module.css"
 const Cart = (props) => {
     const getCartItems = props.cart.map((product)=>(
         <Product
@@ -19,7 +19,9 @@ const Cart = (props) => {
     return(
         <>
         <h1>Cart</h1>
+        <div className={s.cartContainer}>
         {getCartItems}
+        </div>
         </>
     )
 }
