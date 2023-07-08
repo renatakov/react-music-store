@@ -36,6 +36,8 @@ const Home = (props) => {
       saleNum={product.saleNum}
       reviews={product.reviews}
       addToCart={props.addToCart}
+      addToWishlist={props.addToWishlist}
+      wishlist={props.wishlist}
     cart={props.cart}
 
     />
@@ -53,6 +55,8 @@ const Home = (props) => {
     price={product.price}
     reviews={product.reviews}
     addToCart={props.addToCart}
+    addToWishlist={props.addToWishlist}
+    wishlist={props.wishlist}
     cart={props.cart}
 
   />
@@ -62,7 +66,8 @@ const Home = (props) => {
   .map((product)=>(
     <Product
     id={product.id}
-
+    addToWishlist={props.addToWishlist}
+    wishlist={props.wishlist}
     key={product.id}
     title={product.title}
     img={product.img}
@@ -79,7 +84,8 @@ const Home = (props) => {
   .map((product)=>(
     <Product
     id={product.id}
-
+    addToWishlist={props.addToWishlist}
+    wishlist={props.wishlist}
     key={product.id}
     title={product.title}
     img={product.img}

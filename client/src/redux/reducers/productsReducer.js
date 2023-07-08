@@ -171,7 +171,23 @@ const initialState = {
       price: 660
   },
 ],
-cartItems:[]
+cartItems:[],
+wishlistItems:[]
+}
+
+const addToWishlist = (state, action) => {
+    const productsInWishlist = state.products.filter(item => item.id === action.btnId); 
+    if(productsInWishlist.length > 0){
+        return {
+            ...state,
+            wishlistItems: [
+                ...state.wishlistItems,
+                ...productsInWishlist
+            ] 
+        };
+    } else{
+        return state; 
+    }
 }
 
 const addToCart = (state, action) => {
@@ -179,7 +195,10 @@ const addToCart = (state, action) => {
     if(productsInCart.length > 0){
         return {
             ...state,
-            cartItems: [...productsInCart] 
+            cartItems: [
+                ...state.cartItems,
+                ...productsInCart
+            ] 
         };
     } else{
         return state; 
@@ -192,6 +211,9 @@ export const productsReducer = (state = initialState, action) => {
         case ADD_TO_CART:{
             return addToCart(state, action);
         }
+        case ADD_TO_WISHLIST:{
+            return addToWishlist(state, action)
+        }
         default:{
             return state;
         }
@@ -203,7 +225,7 @@ type: ADD_TO_CART,
 btnId
 })
 
-export const addToWishlistAC = (product) =>({
+export const addToWishlistAC = (btnId) =>({
     type: ADD_TO_WISHLIST,
-    product
+    btnId
     })

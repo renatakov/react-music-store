@@ -9,9 +9,7 @@ padding: 4px 12px;
 color: #FAFAFA;
 }
 
-.sale{
-    color: red;
-}
+
 
 .price{
     color: #000000;
@@ -25,8 +23,21 @@ color: #FAFAFA;
     display: none;
 }
 
+/* .productContainer__firstBlock{
+    margin-top: 5px;
+    padding: 30px;
+    background-color: #d0cbcb4c;
+} */
+
 .productContainer:hover > .addToCartBtn{
     display: block;
     transform: translateY(-129px);
     transition: 2s;
 }
+
+.wishlistBtn{
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50px;
+}
+

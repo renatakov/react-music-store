@@ -1,7 +1,5 @@
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer"
-import Home, { MyContext } from "./Components/HomePage/HomePage";
-import { Provider } from "react-redux";
 import React, { createContext } from 'react';
 import LoginContainer from "./redux/LoginContainer";
 import product1 from "./images/products/g92-2-500x500 1.png";
@@ -24,6 +22,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import AboutUs from "./Components/AboutUs/AboutUs";
 import AuthorizationContainer from "./redux/AuthorizationContainer";
 import ProductsContainer from "./redux/ProductsContainer";
+import Cart from "./redux/CartContainer.js"
+import Wishlist from "./redux/WishlistContainer"
 const initialState = {
         products: [
 
@@ -189,7 +189,8 @@ const App = () =>{
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/signup" element={<AuthorizationContainer/>}/>
         <Route path="/login" element={<LoginContainer/>}/>
-
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/wishlist" element={<Wishlist/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

@@ -1,5 +1,5 @@
 import s from './Product.module.css'
-
+import wishlistImg from "../../images/logos/Wishlist.svg"
 const Product = (props) =>{
     // console.log(props.products)
     let prices = props.sale === true ? <p className={s.sale}>{props.price}$</p> : <p className={s.price}>{props.price}$</p>
@@ -9,6 +9,10 @@ const Product = (props) =>{
             <img width="20px" height="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFQZwqgL2tnG5LOLljy-Mv73yHr5neg5qj8Q&usqp=CAU" alt=""/>
         )
     }
+    const wishlistBtn = () => {
+        props.addToWishlist(props.id)
+        console.log(props.wishlist)
+    }
     const cartBtn = () => {
         props.addToCart(props.id)
         console.log(props.cart)
@@ -17,7 +21,12 @@ const Product = (props) =>{
         
         <div className={s.productContainer}>
             {props.saleNum > 0 && <span>-{props.saleNum}%</span>}
+            <div className={s.productContainer__firstBlock}>
             <img className={s.productImg} src={props.img} alt=""/>
+            <button onClick={wishlistBtn} className={s.wishlistBtn}>
+                <img src={wishlistImg} alt="" />
+            </button>
+            </div>
             <h3>{props.title}</h3>
             {prices}
             {reviewImg}

@@ -14,12 +14,12 @@ const Header = () =>{
                 </ul>
                 <div className={s.btnSection}>
             <input id={s.inputSearch} type="text" placeholder="Search"/>
-            <button className={s.wishlistBtn}>
-                
-            </button>
-            <button className={s.cartBtn}>
-                
-            </button>
+            <Link to="/wishlist">
+            <button className={s.wishlistBtn}></button>
+            </Link>
+            <Link to="/cart">
+            <button className={s.cartBtn}></button>
+            </Link>
                 </div>
         </header>
     )
