@@ -5,7 +5,6 @@ const Wishlist = (props) => {
     const getWishlistItems = props.wishlist.map((product)=>(
         <Product
         id={product.id}
-
         key={product.id}
         title={product.title}
         img={product.img}
@@ -14,7 +13,7 @@ const Wishlist = (props) => {
         price={product.price}
         reviews={product.reviews}
         addToCart={props.addToCart}
-        addToWishlist={props.addToWishlist}
+        deleteFromWishlist={props.deleteFromWishlist}
         cart={props.cart}
         />
     ))

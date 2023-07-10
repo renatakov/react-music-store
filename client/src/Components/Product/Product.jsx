@@ -1,5 +1,6 @@
 import s from './Product.module.css'
 import wishlistImg from "../../images/logos/Wishlist.svg"
+import deleteFromWishlistImg from "../../images/logos/Vector.svg"
 const Product = (props) =>{
     // console.log(props.products)
     let prices = props.sale === true ? <p className={s.sale}>{props.price}$</p> : <p className={s.price}>{props.price}$</p>
@@ -17,21 +18,31 @@ const Product = (props) =>{
         props.addToCart(props.id)
         console.log(props.cart)
     }
+
+    const deleteFromWishlistFunction = () => {
+        props.deleteFromWishlist(props.id)
+    }
     return(
         
         <div className={s.productContainer}>
             {props.saleNum > 0 && <span>-{props.saleNum}%</span>}
             <div className={s.productContainer__firstBlock}>
             <img className={s.productImg} src={props.img} alt=""/>
-            <button onClick={wishlistBtn} className={s.wishlistBtn}>
+            {props.addToWishlist && <button onClick={wishlistBtn} className={s.wishlistBtn}>
                 <img src={wishlistImg} alt="" />
-            </button>
+            </button>}
+            
             </div>
             <h3>{props.title}</h3>
             {prices}
             {reviewImg}
             <span>({props.reviews})</span>
-            <button  onClick={cartBtn} className={s.addToCartBtn}>Add To Cart</button>
+            {props.deleteFromWishlist && <button onClick={deleteFromWishlistFunction} className={s.deleteFromWishlistBtn}>
+                <img src={deleteFromWishlistImg} alt=""/>
+            </button> }
+            
+            {props.addToCart && <button  onClick={cartBtn} className={s.addToCartBtn}>Add To Cart</button>}
+            
         </div>
         
     )

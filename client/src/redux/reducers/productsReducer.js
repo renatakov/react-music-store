@@ -18,6 +18,7 @@ import product16 from "../../images/products/698717_Z8A1X_3475_001_100_0000_Ligh
 
 const ADD_TO_CART = "ADD_TO_CART"
 const ADD_TO_WISHLIST = "ADD_TO_WISHLIST"
+const DELETE_FROM_WISHLIST = "DELETE_FROM_WISHLIST"
 
 const initialState = {
     products: [
@@ -175,6 +176,36 @@ cartItems:[],
 wishlistItems:[]
 }
 
+// const deleteFromWishlist = (state, action) => {
+// const updateWishlist = state.wishlistItems.filter((wishlistItem) => wishlistItem.id !== action.btnId)
+// if(updateWishlist.length > 0) {
+//     return{
+//         ...state,
+//         wishlistItems: [
+//             ...state.wishlistItems,
+//             ...updateWishlist
+//         ]
+//     }
+// } else {
+//     return state
+// }
+// }
+
+const deleteFromWishlist = (state, action) =>{
+    let updatedWishlist = state.wishlistItems.filter((item) =>{
+        if(item.id !== action.idToDelete){
+            return item;
+        }
+    })
+
+    return{
+        ...state,
+        wishlistItems: [
+            ...updatedWishlist
+        ]
+    }
+}
+
 const addToWishlist = (state, action) => {
     const productsInWishlist = state.products.filter(item => item.id === action.btnId); 
     if(productsInWishlist.length > 0){
@@ -214,6 +245,9 @@ export const productsReducer = (state = initialState, action) => {
         case ADD_TO_WISHLIST:{
             return addToWishlist(state, action)
         }
+        case DELETE_FROM_WISHLIST:{
+            return deleteFromWishlist(state, action)
+        }
         default:{
             return state;
         }
@@ -228,4 +262,9 @@ btnId
 export const addToWishlistAC = (btnId) =>({
     type: ADD_TO_WISHLIST,
     btnId
+    })
+
+    export const deleteFromWishlistAC = (idToDelete) => ({
+        type: DELETE_FROM_WISHLIST,
+        idToDelete
     })

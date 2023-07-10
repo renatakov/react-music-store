@@ -35,9 +35,13 @@ color: #FAFAFA;
     transition: 2s;
 }
 
-.wishlistBtn{
+.wishlistBtn,
+.deleteFromWishlistBtn{
     background-color: #ffffff;
     border: none;
     border-radius: 50px;
 }
 
+/* .deleteFromWishlistBtn{
+    background: ;
+} */

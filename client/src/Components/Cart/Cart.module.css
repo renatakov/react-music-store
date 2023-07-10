@@ -1,5 +1,7 @@
 .cartContainer{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
+    overflow-x: scroll;
+    padding: 50px;
 }
