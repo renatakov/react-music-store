@@ -2,7 +2,11 @@ import s from './Product.module.css'
 import wishlistImg from "../../images/logos/Wishlist.svg"
 import deleteFromWishlistImg from "../../images/logos/Vector.svg"
 const Product = (props) =>{
-    // console.log(props.products)
+    // const addBucketItems = props.accounts.map(account => (account.bucket = [...props.cart]))
+    // const addWishlistItems = props.accounts.map(account => (account.wishlist = [...props.wishlist]))
+    // console.log(props.accounts)
+    // const loginFilter = props.accounts.filter((account) => account.email === localStorage.getItem("userEmail") && account.password === localStorage.getItem("userPassword"))
+
     let prices = props.sale === true ? <p className={s.sale}>{props.price}$</p> : <p className={s.price}>{props.price}$</p>
     const reviewImg = []
     for(let i = 0; i < props.stars; i++){
@@ -11,11 +15,15 @@ const Product = (props) =>{
         )
     }
     const wishlistBtn = () => {
-        props.addToWishlist(props.id)
+        // if(loginFilter.length === 1){
+            props.addToWishlist(props.id)
+        // }
         console.log(props.wishlist)
     }
     const cartBtn = () => {
-        props.addToCart(props.id)
+        // if(loginFilter.length === 1){
+            props.addToCart(props.id)
+        // }
         console.log(props.cart)
     }
 

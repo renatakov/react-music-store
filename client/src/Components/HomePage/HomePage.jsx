@@ -39,6 +39,7 @@ const Home = (props) => {
       addToWishlist={props.addToWishlist}
       wishlist={props.wishlist}
     cart={props.cart}
+    accounts={props.accounts}
 
     />
   ));
@@ -46,6 +47,7 @@ const Home = (props) => {
   .map((product)=>(
     <Product
     id={product.id}
+    accounts={props.accounts}
 
     key={product.id}
     title={product.title}
@@ -77,6 +79,7 @@ const Home = (props) => {
     reviews={product.reviews}
     addToCart={props.addToCart}
     cart={props.cart}
+    accounts={props.accounts}
 
   />
   ))
@@ -95,6 +98,7 @@ const Home = (props) => {
     reviews={product.reviews}
     addToCart={props.addToCart}
     cart={props.cart}
+    accounts={props.accounts}
   />
   ))
 // console.log(getProductsWithSale)

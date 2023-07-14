@@ -10,6 +10,8 @@ const initialState = {
             email: "renatakov1010@gmail.com",
             password: "Admin1234@",
             address: "Kingston 12, United States",
+            bucket:[],
+            wishlist:[],
         },
         {
             id:2,
@@ -17,6 +19,8 @@ const initialState = {
             email: "john123@gmail.com",
             password: "qwerty345",
             address: "Wall Street, London",
+            bucket:[],
+            wishlist:[],
         }
     ],
     newAcconut:{
@@ -25,6 +29,8 @@ const initialState = {
         email:'',
         password:'',
         address: '',
+        bucket:[],
+        wishlist:[],
     },
     
 
@@ -44,6 +50,8 @@ const addAccount = (state) => {
             email:'',
             password:'',
             address: '',
+            bucket:[],
+            wishlist:[],
         }
     }
 }
@@ -90,7 +98,7 @@ const updateNewAccount = (state, action) => {
 
 const loginToAccount = (state, action) => {
     const loginFilter = state.accounts.filter((account) => account.email === action.accountEmail && account.password === action.accountPassword)
-    if(loginFilter.length > 0){
+    if(loginFilter.length === 1 ){
         return{
             ...state,
             accounts:[

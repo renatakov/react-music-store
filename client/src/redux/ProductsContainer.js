@@ -4,6 +4,7 @@ import Home from "../Components/HomePage/HomePage";
 import Cart from "../Components/Cart/Cart";
 import Wishlist from "../Components/Wishlist/Wishlist";
 const mapStateToProps = (state) => ({
+    accounts: state.authorization.accounts,
     products: state.products.products,
     cart: state.products.cartItems,
     wishlist: state.products.wishlistItems
