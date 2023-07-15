@@ -10,12 +10,6 @@ const Login = (props) => {
         const email = inputEmail.current.value
         const password = inputPassword.current.value
         props.loginToAccount(email, password)
-    // const addBucketItems = props.accounts.map(account => (account.bucket = [...props.cart]))
-    // const addWishlistItems = props.accounts.map(account => (account.wishlist = [...props.wishlist]))
-        localStorage.setItem("userEmail", email)
-        localStorage.setItem("userPassword", password)
-        
-        console.log("loggined")
         console.log(props.accounts)
     }
     return(

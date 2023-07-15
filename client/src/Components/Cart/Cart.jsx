@@ -11,7 +11,7 @@ const Cart = (props) => {
         sale={product.sale}
         price={product.price}
         reviews={product.reviews}
-        cart={props.cart}
+        // cart={props.cart}
         />
     ))
         const arrWithPrices = []

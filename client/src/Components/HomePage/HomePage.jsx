@@ -12,10 +12,6 @@ import icon3 from "../../images/logos/Icon-secure.svg"
 
 
 const Home = (props) => {
-
-  // console.log(props)
-
-  // Используйте данные
   const [timer, setTimer] = useState({
     hours: 24,
     minutes: 59,
@@ -35,10 +31,10 @@ const Home = (props) => {
       sale={product.sale}
       saleNum={product.saleNum}
       reviews={product.reviews}
-      addToCart={props.addToCart}
-      addToWishlist={props.addToWishlist}
-      wishlist={props.wishlist}
-    cart={props.cart}
+    //   addToCart={props.addToCart}
+    //   addToWishlist={props.addToWishlist}
+    //   wishlist={props.wishlist}
+    // cart={props.cart}
     accounts={props.accounts}
 
     />
@@ -56,10 +52,10 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
-    addToCart={props.addToCart}
-    addToWishlist={props.addToWishlist}
-    wishlist={props.wishlist}
-    cart={props.cart}
+    // addToCart={props.addToCart}
+    // addToWishlist={props.addToWishlist}
+    // wishlist={props.wishlist}
+    // cart={props.cart}
 
   />
   ))
@@ -68,8 +64,8 @@ const Home = (props) => {
   .map((product)=>(
     <Product
     id={product.id}
-    addToWishlist={props.addToWishlist}
-    wishlist={props.wishlist}
+    // addToWishlist={props.addToWishlist}
+    // wishlist={props.wishlist}
     key={product.id}
     title={product.title}
     img={product.img}
@@ -77,8 +73,8 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
-    addToCart={props.addToCart}
-    cart={props.cart}
+    // addToCart={props.addToCart}
+    // cart={props.cart}
     accounts={props.accounts}
 
   />

@@ -1,6 +1,11 @@
 const ADD_ACCOUNT = "ADD_ACCOUNT";
 const UPDATE_NEW_ACCOUNT = "UPDATE_ACCOUNT"
 const LOGIN = "LOGIN";
+const ADD_TO_CART = "ADD_TO_CART"
+const ADD_TO_WISHLIST = "ADD_TO_WISHLIST"
+const DELETE_FROM_WISHLIST = "DELETE_FROM_WISHLIST"
+const DELETE_FROM_CART = "DELETE_FROM_CART"
+
 
 const initialState = {
     accounts: [
@@ -12,6 +17,7 @@ const initialState = {
             address: "Kingston 12, United States",
             bucket:[],
             wishlist:[],
+            auth_key: "123_r"
         },
         {
             id:2,
@@ -21,6 +27,7 @@ const initialState = {
             address: "Wall Street, London",
             bucket:[],
             wishlist:[],
+            auth_key: "123_jn"
         }
     ],
     newAcconut:{
@@ -31,6 +38,7 @@ const initialState = {
         address: '',
         bucket:[],
         wishlist:[],
+        auth_key: ''
     },
     
 
@@ -55,6 +63,32 @@ const addAccount = (state) => {
         }
     }
 }
+const deleteFromWishlist = (state, action) =>{
+
+}
+
+const addToWishlist = (state, action) => {
+
+}
+
+const addToCart = (state, action) => {
+    return{
+    ...state,
+    accounts: [
+        ...state.accounts.map((item)=>{
+            if(item.id === action.idUser){
+                item.basket = [
+                    ...item.basket,
+                    action.idProduct
+                ]
+            }
+            return item
+        }),
+
+    ]
+    }
+    
+    };
 
 const updateNewAccount = (state, action) => {
     console.log(action)
@@ -106,6 +140,8 @@ const loginToAccount = (state, action) => {
                 
             ]
         }
+        
+
     } else{
         return{
             ...state
@@ -125,6 +161,15 @@ export const authorizationReducer = (state = initialState, action) => {
         }
         case LOGIN:{
             return loginToAccount(state, action)
+        }
+        case ADD_TO_CART:{
+            return addToCart(state, action);
+        }
+        case ADD_TO_WISHLIST:{
+            return addToWishlist(state, action)
+        }
+        case DELETE_FROM_WISHLIST:{
+            return deleteFromWishlist(state, action)
         }
         default:{
             return state
@@ -160,3 +205,27 @@ export const loginToAccountAC = (accountEmail, accountPassword) =>
         accountPassword
     }
 )
+
+export const addToCartAC = (idUser, idProduct) =>({
+    type: ADD_TO_CART,
+    idUser, 
+    idProduct
+    })
+    
+    export const addToWishlistAC = (idUser, idProduct) =>({
+        type: ADD_TO_WISHLIST,
+        idUser, 
+        idProduct
+        })
+    
+        export const deleteFromWishlistAC = (idUser, idProduct) => ({
+            type: DELETE_FROM_WISHLIST,
+            idUser, 
+            idProduct
+        })
+
+        export const deleteFromCartAC = (idUser, idProduct) => ({
+            type: DELETE_FROM_CART,
+            idUser, 
+            idProduct
+        })

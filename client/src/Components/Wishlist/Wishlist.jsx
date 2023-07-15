@@ -12,9 +12,9 @@ const Wishlist = (props) => {
         sale={product.sale}
         price={product.price}
         reviews={product.reviews}
-        addToCart={props.addToCart}
-        deleteFromWishlist={props.deleteFromWishlist}
-        cart={props.cart}
+        // addToCart={props.addToCart}
+        // deleteFromWishlist={props.deleteFromWishlist}
+        // cart={props.cart}
         />
     ))
     return(
