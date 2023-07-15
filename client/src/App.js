@@ -1,7 +1,7 @@
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer"
 import React, { createContext } from 'react';
-import LoginContainer from "./redux/LoginContainer";
+import Login from "./Components/Login/Login";
 import product1 from "./images/products/g92-2-500x500 1.png";
 import product2 from "./images/products/ak-900-01-500x500 1.png";
 import product3 from "./images/products/g27cq4-500x500 1.png";
@@ -24,159 +24,7 @@ import AuthorizationContainer from "./redux/AuthorizationContainer";
 import ProductsContainer from "./redux/ProductsContainer";
 import Cart from "./redux/CartContainer.js"
 import Wishlist from "./redux/WishlistContainer"
-const initialState = {
-        products: [
 
-        {
-            id: 1,
-            title: 'HAVIT HV-G92 Gamepad',
-            stars: 5,
-            sale: true,
-            saleNum: 40,
-            reviews: 88,
-            img: product1,
-            price: 120
-      },
-      {
-          id: 2,
-          title: 'AK-900 Wired Keyboard',
-          stars: 4,
-          sale: true,
-          saleNum: 35,
-          reviews: 75,
-          img: product2,
-          price: 960
-      },
-      {
-          id: 3,
-          title: 'IPS LCD Gaming Monitor',
-          stars: 5,
-          sale: true,
-          saleNum: 30,
-          reviews: 99,
-          img: product3,
-          price: 370
-      },
-      {
-          id: 4,
-          title: 'S-Series Comfort Chair ',
-          stars: 4,
-          sale: true,
-          saleNum: 25,
-          reviews: 99,
-          img: product4,
-          price: 375
-      },
-      {
-          id: 5,
-          title: 'The north coat ',
-          stars: 5,
-          sale: false,
-          reviews: 65,
-          img: product5,
-          price: 260
-      },
-      {
-          id: 6,
-          title: 'Gucci duffle bag',
-          stars: 4,
-          sale: false,
-          reviews: 65,
-          img: product6,
-          price: 960
-      },
-      {
-          id: 7,
-          title: 'RGB liquid CPU Cooler',
-          stars: 4,
-          sale: false,
-          reviews: 65,
-          img: product7,
-          price: 160
-      },
-      {
-          id: 8,
-          title: 'Small BookSelf',
-          stars: 5,
-          sale: false,
-          reviews: 65,
-          img: product8,
-          price: 360
-      },
-      {
-          id: 9,
-          title: 'Breed Dry Dog Food',
-          stars: 3,
-          sale: false,
-          reviews: 35,
-          img: product9,
-          price: 100
-      },
-      {
-          id: 10,
-          title: 'CANON EOS DSLR Camera',
-          stars: 4,
-          sale: false,
-          reviews: 65,
-          img: product10,
-          price: 360
-      },
-      {
-          id: 11,
-          title: 'ASUS FHD Gaming Laptop',
-          stars: 5,
-          sale: false,
-          reviews: 325,
-          img: product11,
-          price: 700
-      },
-      {
-          id: 12,
-          title: 'Curology Product Set ',
-          stars: 4,
-          sale: false,
-          reviews: 145,
-          img: product12,
-          price: 500
-      },
-      {
-          id: 13,
-          title: 'Kids Electric Car',
-          stars: 5,
-          sale: false,
-          reviews: 65,
-          img: product13,
-          price: 960
-      },
-      {
-          id: 14,
-          title: 'Jr. Zoom Soccer Cleats',
-          stars: 5,
-          sale: false,
-          reviews: 35,
-          img: product14,
-          price: 1160
-      },
-      {
-          id: 15,
-          title: 'GP11 Shooter USB Gamepad',
-          stars: 4,
-          sale: false,
-          reviews: 55,
-          img: product15,
-          price: 660
-      },
-      {
-          id: 16,
-          title: 'Quilted Satin Jacket',
-          stars: 4,
-          sale: false,
-          reviews: 55,
-          img: product16,
-          price: 660
-      },
-  ]
-}
 const App = () =>{
   return(
     <>
@@ -188,7 +36,7 @@ const App = () =>{
         />
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/signup" element={<AuthorizationContainer/>}/>
-        <Route path="/login" element={<LoginContainer/>}/>
+        <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
     </Routes>

@@ -131,22 +131,6 @@ const updateNewAccount = (state, action) => {
 }
 
 const loginToAccount = (state, action) => {
-    const loginFilter = state.accounts.filter((account) => account.email === action.accountEmail && account.password === action.accountPassword)
-    if(loginFilter.length === 1 ){
-        return{
-            ...state,
-            accounts:[
-                ...loginFilter,
-                
-            ]
-        }
-        
-
-    } else{
-        return{
-            ...state
-        }
-    }
     
     
 }
