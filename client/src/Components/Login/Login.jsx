@@ -4,23 +4,27 @@ import { Link } from "react-router-dom"
 import img1 from "../../images/authorizaion/dl.beatsnoop 1.png"
 const Login = (props) => {
     // console.log(props)
-    // const inputEmail = useRef(null)
-    // const inputPassword = useRef(null)
-    // const handleLoginBtn = () =>{
-    //     const email = inputEmail.current.value
-    //     const password = inputPassword.current.value
-    //     props.loginToAccount(email, password)
-    //     console.log(props.accounts)
-    // }
+    const inputEmail = useRef(null)
+    const inputPassword = useRef(null)
+    const loginBtn = () => {
+        const loginFilter = props.accounts.filter((acc)=>{
+            if(inputEmail.current.value == acc.email && inputPassword.current.value == acc.password){
+                console.log("loggined")
+                sessionStorage.setItem("userEmail", acc.email)
+                sessionStorage.setItem("userPassword", acc.password)
+
+            }
+        })
+    }
     return(
         <section className={s.loginSection}>
             <img src={img1} alt="" />
             <div className={s.loginSection__block}>
                 <h2>Login To Exclusive</h2>
                 <p>Enter your details below</p>
-                <input  type="email" placeholder="Email"/>
-                <input type="password" placeholder="Password"/>
-                <button>
+                <input ref={inputEmail} type="email" placeholder="Email"/>
+                <input ref={inputPassword} type="password" placeholder="Password"/>
+                <button onClick={loginBtn}>
                     <Link to="/">Login</Link>
                     </button>
             </div>

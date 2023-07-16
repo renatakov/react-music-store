@@ -135,12 +135,15 @@ const updateNewAccount = (state, action) => {
     }
 }
 
-const loginToAccount = (state, action) => {
-    const loginFilter = state.accounts.filter((account) => {
-        // if()
-    })
+// const loginToAccount = (state, action) => {
+//     const loginFilter = state.accounts.filter((account) => {
+//         if(action.inputEmail == account.email && action.inputPassword == account.password){
+//             sessionStorage.setItem("userEmail", account.email)
+//             sessionStorage.setItem("userPassword", account.password)
+//         }
+//     })
     
-}
+// }
 
 export const authorizationReducer = (state = initialState, action) => {
     switch(action.type){
@@ -150,9 +153,9 @@ export const authorizationReducer = (state = initialState, action) => {
         case UPDATE_NEW_ACCOUNT:{
             return updateNewAccount(state, action)
         }
-        case LOGIN:{
-            return loginToAccount(state, action)
-        }
+        // case LOGIN:{
+        //     return loginToAccount(state, action)
+        // }
         case ADD_TO_CART:{
             return addToCart(state, action);
         }
@@ -191,14 +194,14 @@ export const updateNewAccountAC = (inputForm, inputValue) =>
     }
 )
 
-export const loginToAccountAC = (inputEmail, inputPassword) => 
-(
-    {
-        type: LOGIN,
-        inputEmail,
-        inputPassword
-    }
-)
+// export const loginToAccountAC = (inputEmail, inputPassword) => 
+// (
+//     {
+//         type: LOGIN,
+//         inputEmail,
+//         inputPassword
+//     }
+// )
 
 export const addToCartAC = (idUser, idProduct) =>({
     type: ADD_TO_CART,

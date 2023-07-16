@@ -1,7 +1,7 @@
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer"
 import React, { createContext } from 'react';
-import Login from "./Components/Login/Login";
+import Login from "./redux/LoginContainer";
 import product1 from "./images/products/g92-2-500x500 1.png";
 import product2 from "./images/products/ak-900-01-500x500 1.png";
 import product3 from "./images/products/g27cq4-500x500 1.png";
