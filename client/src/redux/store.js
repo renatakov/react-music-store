@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { createStore } from "redux";
-import { authorizationReducer } from "./reducers/autorizationReducer";
+import { authorizationReducer } from "./reducers/usersReducer";
 import { productsReducer } from "./reducers/productsReducer";
 
 let reducers = combineReducers({

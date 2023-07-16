@@ -63,6 +63,11 @@ const addAccount = (state) => {
         }
     }
 }
+
+const deleteFromCart = (state, action) =>{
+
+}
+
 const deleteFromWishlist = (state, action) =>{
 
 }
@@ -131,7 +136,9 @@ const updateNewAccount = (state, action) => {
 }
 
 const loginToAccount = (state, action) => {
-    
+    const loginFilter = state.accounts.filter((account) => {
+        // if()
+    })
     
 }
 
@@ -151,6 +158,9 @@ export const authorizationReducer = (state = initialState, action) => {
         }
         case ADD_TO_WISHLIST:{
             return addToWishlist(state, action)
+        }
+        case DELETE_FROM_CART:{
+            return deleteFromCart(state, action)
         }
         case DELETE_FROM_WISHLIST:{
             return deleteFromWishlist(state, action)
@@ -181,12 +191,12 @@ export const updateNewAccountAC = (inputForm, inputValue) =>
     }
 )
 
-export const loginToAccountAC = (accountEmail, accountPassword) => 
+export const loginToAccountAC = (inputEmail, inputPassword) => 
 (
     {
         type: LOGIN,
-        accountEmail,
-        accountPassword
+        inputEmail,
+        inputPassword
     }
 )
 

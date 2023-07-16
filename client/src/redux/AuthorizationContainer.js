@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { addAccountAC, updateNewAccountAC, loginToAccountAC } from "./reducers/autorizationReducer";
+import { addAccountAC, updateNewAccountAC, loginToAccountAC } from "./reducers/usersReducer";
 import SignUp from "../Components/SignUp/SignUp";
 
 
