@@ -15,7 +15,7 @@ color: #FAFAFA;
     color: #000000;
 }
 
-.addToCartBtn{
+.addToBasketBtn{
     color: #FAFAFA;
     background-color: #000000;
     border: none;
@@ -29,7 +29,7 @@ color: #FAFAFA;
     background-color: #d0cbcb4c;
 } */
 
-.productContainer:hover > .addToCartBtn{
+.productContainer:hover > .addToBasketBtn{
     display: block;
     transform: translateY(-129px);
     transition: 2s;

@@ -2,10 +2,10 @@ import {nanoid} from "nanoid"
 const ADD_ACCOUNT = "ADD_ACCOUNT";
 const UPDATE_NEW_ACCOUNT = "UPDATE_ACCOUNT"
 const LOGIN = "LOGIN";
-const ADD_TO_CART = "ADD_TO_CART"
+const ADD_TO_BASKET = "ADD_TO_BASKET"
 const ADD_TO_WISHLIST = "ADD_TO_WISHLIST"
 const DELETE_FROM_WISHLIST = "DELETE_FROM_WISHLIST"
-const DELETE_FROM_CART = "DELETE_FROM_CART"
+const DELETE_FROM_BASKET = "DELETE_FROM_BASKET"
 
 
 const initialState = {
@@ -16,7 +16,7 @@ const initialState = {
             email: "renatakov1010@gmail.com",
             password: "Admin1234@",
             address: "Kingston 12, United States",
-            bucket:[],
+            basket:[],
             wishlist:[],
             auth_key: "123_r"
         },
@@ -26,7 +26,7 @@ const initialState = {
             email: "john123@gmail.com",
             password: "qwerty345",
             address: "Wall Street, London",
-            bucket:[],
+            basket:[],
             wishlist:[],
             auth_key: "123_jn"
         }
@@ -37,7 +37,7 @@ const initialState = {
         email:'',
         password:'',
         address: '',
-        bucket:[],
+        basket:[],
         wishlist:[],
         auth_key: nanoid(8)
     },
@@ -60,13 +60,13 @@ const addAccount = (state) => {
             email:'',
             password:'',
             address: '',
-            bucket:[],
+            basket:[],
             wishlist:[],
         }
     }
 }
 
-const deleteFromCart = (state, action) =>{
+const deleteFromBasket = (state, action) =>{
 
 }
 
@@ -78,12 +78,12 @@ const addToWishlist = (state, action) => {
 
 }
 
-const addToCart = (state, action) => {
+const addToBasket = (state, action) => {
     return{
     ...state,
     accounts: [
         ...state.accounts.map((item)=>{
-            if(item.id === action.idUser){
+            if(item.auth_key === action.idUser){
                 item.basket = [
                     ...item.basket,
                     action.idProduct
@@ -137,15 +137,7 @@ const updateNewAccount = (state, action) => {
     }
 }
 
-// const loginToAccount = (state, action) => {
-//     const loginFilter = state.accounts.filter((account) => {
-//         if(action.inputEmail == account.email && action.inputPassword == account.password){
-//             sessionStorage.setItem("userEmail", account.email)
-//             sessionStorage.setItem("userPassword", account.password)
-//         }
-//     })
-    
-// }
+
 
 export const authorizationReducer = (state = initialState, action) => {
     switch(action.type){
@@ -155,17 +147,14 @@ export const authorizationReducer = (state = initialState, action) => {
         case UPDATE_NEW_ACCOUNT:{
             return updateNewAccount(state, action)
         }
-        // case LOGIN:{
-        //     return loginToAccount(state, action)
-        // }
-        case ADD_TO_CART:{
-            return addToCart(state, action);
+        case ADD_TO_BASKET:{
+            return addToBasket(state, action);
         }
         case ADD_TO_WISHLIST:{
             return addToWishlist(state, action)
         }
-        case DELETE_FROM_CART:{
-            return deleteFromCart(state, action)
+        case DELETE_FROM_BASKET:{
+            return deleteFromBasket(state, action)
         }
         case DELETE_FROM_WISHLIST:{
             return deleteFromWishlist(state, action)
@@ -205,8 +194,8 @@ export const updateNewAccountAC = (inputForm, inputValue) =>
 //     }
 // )
 
-export const addToCartAC = (idUser, idProduct) =>({
-    type: ADD_TO_CART,
+export const addToBasketAC = (idUser, idProduct) =>({
+    type: ADD_TO_BASKET,
     idUser, 
     idProduct
     })
@@ -223,8 +212,8 @@ export const addToCartAC = (idUser, idProduct) =>({
             idProduct
         })
 
-        export const deleteFromCartAC = (idUser, idProduct) => ({
-            type: DELETE_FROM_CART,
+        export const deleteFromBasketAC = (idUser, idProduct) => ({
+            type: DELETE_FROM_BASKET,
             idUser, 
             idProduct
         })

@@ -2,6 +2,7 @@ import s from './Product.module.css'
 import wishlistImg from "../../images/logos/Wishlist.svg"
 import deleteFromWishlistImg from "../../images/logos/Vector.svg"
 const Product = (props) =>{
+    // console.log(props)
     let prices = props.sale === true ? <p className={s.sale}>{props.price}$</p> : <p className={s.price}>{props.price}$</p>
     const reviewImg = []
     for(let i = 0; i < props.stars; i++){
@@ -13,8 +14,11 @@ const Product = (props) =>{
     const wishlistBtn = () => {
             
     }
-    const cartBtn = () => {
+            const idUser = sessionStorage.getItem("userAuthKey")
             
+    const basketBtn = () => {
+        props.addToBasket(idUser, props.id)
+            console.log(props.accounts)
     }
 
     const deleteFromWishlistFunction = () => {
@@ -39,7 +43,7 @@ const Product = (props) =>{
                 <img src={deleteFromWishlistImg} alt=""/>
             </button> }
             
-            {props.addToCart && <button  onClick={cartBtn} className={s.addToCartBtn}>Add To Cart</button>}
+            {props.addToBasket && <button  onClick={basketBtn} className={s.addToBasketBtn}>Add To Basket</button>}
             
         </div>
         

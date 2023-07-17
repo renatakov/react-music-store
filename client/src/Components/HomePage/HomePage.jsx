@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
+import React, { useState, useEffect } from "react";
 import s from "./HomePage.module.css";
 import Product from "../Product/Product";
 import jbl from "../../images/HomePage/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
@@ -31,7 +31,7 @@ const Home = (props) => {
       sale={product.sale}
       saleNum={product.saleNum}
       reviews={product.reviews}
-    //   addToCart={props.addToCart}
+      addToBasket={props.addToBasket}
     //   addToWishlist={props.addToWishlist}
     //   wishlist={props.wishlist}
     // cart={props.cart}
@@ -44,7 +44,6 @@ const Home = (props) => {
     <Product
     id={product.id}
     accounts={props.accounts}
-
     key={product.id}
     title={product.title}
     img={product.img}
@@ -52,7 +51,8 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
-    // addToCart={props.addToCart}
+    addToBasket={props.addToBasket}
+
     // addToWishlist={props.addToWishlist}
     // wishlist={props.wishlist}
     // cart={props.cart}
@@ -65,7 +65,6 @@ const Home = (props) => {
     <Product
     id={product.id}
     // addToWishlist={props.addToWishlist}
-    // wishlist={props.wishlist}
     key={product.id}
     title={product.title}
     img={product.img}
@@ -73,8 +72,9 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
-    // addToCart={props.addToCart}
-    // cart={props.cart}
+    addToBasket={props.addToBasket}
+
+    
     accounts={props.accounts}
 
   />
@@ -83,7 +83,7 @@ const Home = (props) => {
   .map((product)=>(
     <Product
     id={product.id}
-    addToWishlist={props.addToWishlist}
+    // addToWishlist={props.addToWishlist}
     wishlist={props.wishlist}
     key={product.id}
     title={product.title}
@@ -92,8 +92,7 @@ const Home = (props) => {
     sale={product.sale}
     price={product.price}
     reviews={product.reviews}
-    addToCart={props.addToCart}
-    cart={props.cart}
+    addToBasket={props.addToBasket}
     accounts={props.accounts}
   />
   ))

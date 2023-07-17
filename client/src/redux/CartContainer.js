@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import Cart from "../Components/Cart/Cart";
 
 const mapStateToProps = (state) => ({
-    // cart: state.products.cartItems,
+    accounts: state.authorization.accounts,
+    products: state.products.products,
 })
 
 const mapDispatchToProps = {
