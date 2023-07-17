@@ -1,3 +1,4 @@
+import {nanoid} from "nanoid"
 const ADD_ACCOUNT = "ADD_ACCOUNT";
 const UPDATE_NEW_ACCOUNT = "UPDATE_ACCOUNT"
 const LOGIN = "LOGIN";
@@ -38,7 +39,7 @@ const initialState = {
         address: '',
         bucket:[],
         wishlist:[],
-        auth_key: ''
+        auth_key: nanoid(8)
     },
     
 
@@ -54,6 +55,7 @@ const addAccount = (state) => {
         ],
         newAcconut:{
             id: null,
+        auth_key: nanoid(8),
             name:'',
             email:'',
             password:'',

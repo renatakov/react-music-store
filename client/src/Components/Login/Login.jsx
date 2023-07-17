@@ -3,7 +3,7 @@ import { useRef } from "react"
 import { Link } from "react-router-dom"
 import img1 from "../../images/authorizaion/dl.beatsnoop 1.png"
 const Login = (props) => {
-    // console.log(props)
+    console.log(props)
     const inputEmail = useRef(null)
     const inputPassword = useRef(null)
     const loginBtn = () => {
@@ -12,6 +12,8 @@ const Login = (props) => {
                 console.log("loggined")
                 sessionStorage.setItem("userEmail", acc.email)
                 sessionStorage.setItem("userPassword", acc.password)
+                sessionStorage.setItem("userAuthKey", acc.auth_key)
+
 
             }
         })
