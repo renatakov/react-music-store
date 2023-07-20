@@ -1,6 +1,7 @@
 .wishlistContainer{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
+    /* overflow-x: scroll; */
     /* margin-bottom: 1rem; */
 }

@@ -1,13 +1,14 @@
 import { connect } from "react-redux";
-// import { addToCartAC, deleteFromWishlistAC } from "./reducers/productsReducer";
+import { addToBasketAC } from "./reducers/usersReducer";
+
 import Wishlist from "../Components/Wishlist/Wishlist";
 const mapStateToProps = (state) => ({
-    
-    // wishlist: state.products.wishlistItems
+    accounts: state.authorization.accounts,
+    products: state.products.products,
 })
 
 const mapDispatchToProps = {
-    // addToCart: addToCartAC,
+    addToBasket: addToBasketAC,
     // deleteFromWishlist: deleteFromWishlistAC,
 };
 

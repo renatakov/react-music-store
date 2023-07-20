@@ -11,10 +11,11 @@ const Product = (props) =>{
         )
     }
     
+    const idUser = sessionStorage.getItem("userAuthKey")
     const wishlistBtn = () => {
-            
+            props.addToWishlist(idUser, props.id)
+            console.log(props.accounts)
     }
-            const idUser = sessionStorage.getItem("userAuthKey")
             
     const basketBtn = () => {
         props.addToBasket(idUser, props.id)

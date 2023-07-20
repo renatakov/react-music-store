@@ -75,7 +75,21 @@ const deleteFromWishlist = (state, action) =>{
 }
 
 const addToWishlist = (state, action) => {
-
+    return{
+        ...state,
+        accounts: [
+            ...state.accounts.map((item)=>{
+                if(item.auth_key === action.idUser){
+                    item.wishlist = [
+                        ...item.wishlist,
+                        action.idProduct
+                    ]
+                }
+                return item
+            }),
+    
+        ]
+        }
 }
 
 const addToBasket = (state, action) => {

@@ -12,7 +12,7 @@ const Cart = (props) => {
     // props.products.forEach((item) => {
     //     productsId.push(item.id);
     // });
-    const arrWithPrices = []
+    // const arrWithPrices = []
     const renderProducts = () => {
       return basketItems.map((basketItem) => {
         const product = props.products.find((product) => product.id === basketItem);
@@ -40,14 +40,14 @@ const Cart = (props) => {
     };
     // console.log(productsId)
 
-      console.log(arrWithPrices)
-      const initialValue = 0
-      const sumWithInitial = arrWithPrices.reduce(
-        (accumulator, currentValue) => accumulator + currentValue,
-        initialValue
-      );
+      // console.log(arrWithPrices)
+      // const initialValue = 0
+      // const sumWithInitial = arrWithPrices.reduce(
+      //   (accumulator, currentValue) => accumulator + currentValue,
+      //   initialValue
+      // );
       
-      console.log(sumWithInitial);
+      // console.log(sumWithInitial);
     return(
         <>
         <h1>Basket</h1>
