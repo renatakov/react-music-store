@@ -1,6 +1,8 @@
 import Product from "../Product/Product"
 import s from "./Cart.module.css"
+import { useState } from "react"
 const Cart = (props) => {
+  // const [arrWithPrices, setArr] = useState([])
   const basketItems = []
   const idUser = sessionStorage.getItem("userAuthKey")
   props.accounts.forEach((item) => {
@@ -8,15 +10,17 @@ const Cart = (props) => {
       basketItems.push(...item.basket);
     }
   });
-    console.log(basketItems)
+    // console.log(basketItems)
     // props.products.forEach((item) => {
     //     productsId.push(item.id);
     // });
     // const arrWithPrices = []
+    
     const renderProducts = () => {
+
       return basketItems.map((basketItem) => {
         const product = props.products.find((product) => product.id === basketItem);
-    
+        
         if (product) {
 
           return <Product
@@ -42,20 +46,19 @@ const Cart = (props) => {
     // console.log(productsId)
 
       // console.log(arrWithPrices)
-      // const initialValue = 0
-      // const sumWithInitial = arrWithPrices.reduce(
-      //   (accumulator, currentValue) => accumulator + currentValue,
-      //   initialValue
-      // );
+      let sum = 0
+      // arrWithPrices.forEach((item)=>{
+      //   sum+=item
+      //   console.log(item);
+      // })
       
-      // console.log(sumWithInitial);
     return(
         <>
         <h1>Basket</h1>
         <div className={s.cartContainer}>
         {renderProducts()}
         </div>
-        {/* <p>Total Sum: {sumWithInitial} $</p> */}
+        <p>Total Sum: {sum} $</p>
         </>
     )
 }

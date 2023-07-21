@@ -236,7 +236,7 @@ export const addToBasketAC = (idUser, idProduct) =>({
             idProduct
         })
 
-        export const deleteFromBasketAC = (idProduct, idUser) => ({
+        export const deleteFromBasketAC = (idUser, idProduct) => ({
             type: DELETE_FROM_BASKET,
             idUser, 
             idProduct
