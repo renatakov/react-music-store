@@ -13,15 +13,18 @@ const Product = (props) =>{
     
     const idUser = sessionStorage.getItem("userAuthKey")
     const wishlistBtn = () => {
-            props.addToWishlist(idUser, props.id)
-            console.log(props.accounts)
+        props.addToWishlist(idUser, props.id)
+        console.log(props.accounts)
     }
             
     const basketBtn = () => {
         props.addToBasket(idUser, props.id)
-            console.log(props.accounts)
+        console.log(props.accounts)
     }
-
+    const deleteFromBasketFunction = () => {
+        props.deleteFromBasket(idUser, props.id)
+        console.log(props.accounts)
+    }
     const deleteFromWishlistFunction = () => {
         
     }
@@ -40,6 +43,9 @@ const Product = (props) =>{
             {prices}
             {reviewImg}
             <span>({props.reviews})</span>
+            {props.deleteFromBasket && <button onClick={deleteFromBasketFunction} className={s.deleteFromWishlistBtn}>
+                <img src={deleteFromWishlistImg} alt=""/>
+            </button> }
             {props.deleteFromWishlist && <button onClick={deleteFromWishlistFunction} className={s.deleteFromWishlistBtn}>
                 <img src={deleteFromWishlistImg} alt=""/>
             </button> }

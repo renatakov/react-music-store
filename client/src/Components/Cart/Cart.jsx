@@ -31,6 +31,7 @@ const Cart = (props) => {
           reviews={product.reviews}
           addToBasket={props.addToBasket}
           accounts={props.accounts}
+          deleteFromBasket={props.deleteFromBasket}
           
           />;
         }

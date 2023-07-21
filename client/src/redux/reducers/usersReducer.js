@@ -66,8 +66,18 @@ const addAccount = (state) => {
     }
 }
 
-const deleteFromBasket = (state, action) =>{
-
+const deleteFromBasket = (state, action) => { 
+    return (
+        {
+            ...state, 
+            accounts: state.accounts.map(accountItem => {
+                if (accountItem.auth_key === action.idUser) { 
+                    accountItem.basket = accountItem.basket.filter(idBasket => idBasket !== action.idProduct)
+                }
+                return accountItem
+            })
+        }
+    )
 }
 
 const deleteFromWishlist = (state, action) =>{
@@ -226,7 +236,7 @@ export const addToBasketAC = (idUser, idProduct) =>({
             idProduct
         })
 
-        export const deleteFromBasketAC = (idUser, idProduct) => ({
+        export const deleteFromBasketAC = (idProduct, idUser) => ({
             type: DELETE_FROM_BASKET,
             idUser, 
             idProduct

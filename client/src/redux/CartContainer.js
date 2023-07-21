@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-// import { addToWishlistAC } from "./reducers/productsReducer";
+import { deleteFromBasketAC } from "./reducers/usersReducer";
 
 import Cart from "../Components/Cart/Cart";
 
@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    // addToWishlist: addToWishlistAC
+    deleteFromBasket: deleteFromBasketAC
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
