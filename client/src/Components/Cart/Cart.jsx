@@ -15,6 +15,7 @@ const Cart = (props) => {
     //     productsId.push(item.id);
     // });
     // const arrWithPrices = []
+    let sum = 0
     
     const renderProducts = () => {
 
@@ -22,7 +23,7 @@ const Cart = (props) => {
         const product = props.products.find((product) => product.id === basketItem);
         
         if (product) {
-
+          sum+=product.price
           return <Product
           id={product.id}
           wishlist={props.wishlist}
@@ -46,7 +47,6 @@ const Cart = (props) => {
     // console.log(productsId)
 
       // console.log(arrWithPrices)
-      let sum = 0
       // arrWithPrices.forEach((item)=>{
       //   sum+=item
       //   console.log(item);

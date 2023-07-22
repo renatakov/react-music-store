@@ -34,7 +34,7 @@ const Home = (props) => {
       addToBasket={props.addToBasket}
       addToWishlist={props.addToWishlist}
     accounts={props.accounts}
-    deleteFromBasket={props.deleteFromBasket}
+    // deleteFromBasket={props.deleteFromBasket}
     />
   ));
   const getBestSellingProducts = props.products.filter((product)=> product.id >= 5 && product.id <= 8)
@@ -51,7 +51,7 @@ const Home = (props) => {
     reviews={product.reviews}
     addToBasket={props.addToBasket}
     addToWishlist={props.addToWishlist}
-    deleteFromBasket={props.deleteFromBasket}
+    // deleteFromBasket={props.deleteFromBasket}
 
   />
   ))
@@ -70,7 +70,7 @@ const Home = (props) => {
     reviews={product.reviews}
     addToBasket={props.addToBasket}
     accounts={props.accounts}
-    deleteFromBasket={props.deleteFromBasket}
+    // deleteFromBasket={props.deleteFromBasket}
 
   />
   ))
@@ -89,7 +89,7 @@ const Home = (props) => {
     reviews={product.reviews}
     addToBasket={props.addToBasket}
     accounts={props.accounts}
-    deleteFromBasket={props.deleteFromBasket}
+    // deleteFromBasket={props.deleteFromBasket}
 
   />
   ))
