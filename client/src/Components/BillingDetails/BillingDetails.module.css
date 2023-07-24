@@ -1,7 +1,29 @@
 form{
-    width: 500px;
+    width: 400px;
+    height: 400px;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
     align-items: start;
+    margin-bottom: 1rem;
+}
+
+form > input{
+    background-color: #8a8a8a1d;
+    border: none;
+    padding: 5px;
+}
+
+form > label{
+    color: #868686;
+    font-size: 12px;
+}
+
+form > button{
+    margin: 1rem 0;
+    background-color: #ef2929;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fafafa;
 }
