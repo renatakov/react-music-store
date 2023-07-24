@@ -24,6 +24,7 @@ import AuthorizationContainer from "./redux/AuthorizationContainer";
 import ProductsContainer from "./redux/ProductsContainer";
 import Cart from "./redux/CartContainer.js"
 import Wishlist from "./redux/WishlistContainer"
+import BillingDetails from "./Components/BillingDetails/BillingDetails";
 
 const App = () =>{
   return(
@@ -39,6 +40,7 @@ const App = () =>{
         <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/billing-details" element={<BillingDetails/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

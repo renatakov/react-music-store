@@ -1,5 +1,6 @@
 import Product from "../Product/Product"
 import s from "./Cart.module.css"
+import  {Link} from "react-router-dom"
 import { useState } from "react"
 const Cart = (props) => {
   // const [arrWithPrices, setArr] = useState([])
@@ -59,6 +60,11 @@ const Cart = (props) => {
         {renderProducts()}
         </div>
         <p>Total Sum: {sum} $</p>
+        <button className={s.checkoutBtn}>
+          <Link to="/billing-details">
+          Procees to checkout
+          </Link>
+          </button>
         </>
     )
 }

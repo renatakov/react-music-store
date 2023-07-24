@@ -5,3 +5,12 @@
     overflow-x: scroll;
     padding: 50px;
 }
+
+.checkoutBtn{
+    margin-bottom: 1rem;
+    background-color: #E07575;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fafafa;
+}
