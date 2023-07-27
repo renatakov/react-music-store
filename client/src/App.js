@@ -24,7 +24,7 @@ import AuthorizationContainer from "./redux/AuthorizationContainer";
 import ProductsContainer from "./redux/ProductsContainer";
 import Cart from "./redux/CartContainer.js"
 import Wishlist from "./redux/WishlistContainer"
-import BillingDetails from "./Components/BillingDetails/BillingDetails";
+import BillingDetails from "./redux/BillingDetailsContainer";
 
 const App = () =>{
   return(

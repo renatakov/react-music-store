@@ -1,6 +1,13 @@
+.billinDetails__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
 form{
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -27,3 +34,12 @@ form > button{
     padding: 5px 10px;
     color: #fafafa;
 }
+
+ .cartItems {
+    /* width: 200px;
+    height: 200px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+ }

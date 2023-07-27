@@ -1,9 +1,7 @@
 import Product from "../Product/Product"
 import s from "./Cart.module.css"
 import  {Link} from "react-router-dom"
-import { useState } from "react"
 const Cart = (props) => {
-  // const [arrWithPrices, setArr] = useState([])
   const basketItems = []
   const idUser = sessionStorage.getItem("userAuthKey")
   props.accounts.forEach((item) => {
@@ -11,18 +9,10 @@ const Cart = (props) => {
       basketItems.push(...item.basket);
     }
   });
-    // console.log(basketItems)
-    // props.products.forEach((item) => {
-    //     productsId.push(item.id);
-    // });
-    // const arrWithPrices = []
     let sum = 0
-    
     const renderProducts = () => {
-
       return basketItems.map((basketItem) => {
-        const product = props.products.find((product) => product.id === basketItem);
-        
+      const product = props.products.find((product) => product.id === basketItem);
         if (product) {
           sum+=product.price
           return <Product
@@ -45,13 +35,6 @@ const Cart = (props) => {
         
       });
     };
-    // console.log(productsId)
-
-      // console.log(arrWithPrices)
-      // arrWithPrices.forEach((item)=>{
-      //   sum+=item
-      //   console.log(item);
-      // })
       
     return(
         <>
@@ -69,5 +52,3 @@ const Cart = (props) => {
     )
 }
 export default Cart
-
-// 
