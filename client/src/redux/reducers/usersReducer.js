@@ -42,7 +42,7 @@ const initialState = {
         auth_key: nanoid(8)
     },
     
-
+    
 };
 
 const addAccount = (state) => {

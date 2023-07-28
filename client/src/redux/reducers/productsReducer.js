@@ -16,7 +16,7 @@ import product15 from "../../images/products/GP11_PRD3 1.png";
 import product16 from "../../images/products/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png";
 
 
-
+const SEARCH_PRODUCTS = "SEARCH_PRODUCTS"
 
 const initialState = {
     products: [
@@ -170,19 +170,39 @@ const initialState = {
       price: 660
   },
 ],
-
+search:[],
+searchStatus: false
 }
 
 
-
+const searchProducts = (state, action) => {
+return{
+    ...state,
+    search:[
+        ...state.products.filter((item)=>{
+            if(item.title.toLowerCase().includes(action.inputData.toLowerCase())){
+                return item.id
+            } else{
+                return null
+            }
+        })
+    ]
+}
+}
 
 
 export const productsReducer = (state = initialState, action) => {
     switch (action.type){
-
+        case SEARCH_PRODUCTS:{
+            searchProducts(state, action)
+        }
         default:{
             return state;
         }
     }
 }
 
+export const searchProductsAC = (inputData)=>({
+    type: SEARCH_PRODUCTS,
+    inputData
+})
