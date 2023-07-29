@@ -9,6 +9,7 @@ import perfumeImg from "../../images/HomePage/652e82cd70aa6522dd785109a455904c.p
 import icon1 from "../../images/logos/icon-delivery.svg";
 import icon2 from "../../images/logos/Icon-Customer service.svg"
 import icon3 from "../../images/logos/Icon-secure.svg"
+import SearchProductsList from "../SearchProductsList/SearchProductsListContainer";
 
 
 const Home = (props) => {
@@ -17,6 +18,7 @@ const Home = (props) => {
     minutes: 59,
     seconds: 60,
   });
+
 
   const getProductsWithSale = props.products
   .filter((product) => product.sale === true)
@@ -115,7 +117,9 @@ const Home = (props) => {
       clearInterval(interval);
     };
   }, []);
-
+  if(props.searchStatus){
+    return <SearchProductsList/>
+  }
   return (
     <>
       <section className={s.firstSection}>

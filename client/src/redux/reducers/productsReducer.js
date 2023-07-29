@@ -14,6 +14,7 @@ import product13 from "../../images/products/New-Mercedes-Benz-Gtr-Licensed-Ride
 import product14 from "../../images/products/Copa_Sense 1.png";
 import product15 from "../../images/products/GP11_PRD3 1.png";
 import product16 from "../../images/products/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png";
+import { searchFn } from "../../Assets/search";
 
 
 const SEARCH_PRODUCTS = "SEARCH_PRODUCTS"
@@ -180,8 +181,14 @@ const searchProducts = (state, action) => {
 return{
     ...state,
     searchStatus: state.searchText !== 0,
-    searchText: action.inputData
-    
+    searchText: action.inputData,
+    search: state.products.filter((item)=>{
+        if(searchFn(state.searchText, item.title)){
+            return item.id
+        } else{
+            return null
+        }
+    })
 }
 }
 
@@ -190,7 +197,7 @@ return{
 export const productsReducer = (state = initialState, action) => {
     switch (action.type){
         case SEARCH_PRODUCTS:{
-            searchProducts(state, action)
+          return  searchProducts(state, action)
         }
         default:{
             return state;

@@ -9,6 +9,7 @@ const Header = (props) =>{
     }
     const handleSearch = (newValue) => {
         props.searchProducts(newValue)
+        console.log(newValue)
         console.log(props.searchText)
     }
     return(

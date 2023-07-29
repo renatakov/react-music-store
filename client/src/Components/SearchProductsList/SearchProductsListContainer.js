@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
-import Header from "../Components/Header/Header"
-import {searchProductsAC} from "../redux/reducers/productsReducer"
+import SearchProductsList from "./SearchProductsList";
+import {searchProductsAC} from "../../redux/reducers/productsReducer"
 //import { addToBasketAC, addToWishlistAC, deleteFromBasketAC} from "./reducers/usersReducer";
 const mapStateToProps = (state) => ({
-    accounts: state.authorization.accounts,
     products: state.products.products,
-    searchText: state.products.searchText,
+    searchStatus: state.products.searchStatus,
+    searchArr: state.products.search
     
 })
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = {
 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchProductsList);

@@ -5,7 +5,8 @@ import { addToBasketAC, addToWishlistAC, deleteFromBasketAC} from "./reducers/us
 const mapStateToProps = (state) => ({
     accounts: state.authorization.accounts,
     products: state.products.products,
-    searchText: state.products.searchText
+    searchText: state.products.searchText,
+    searchStatus: state.products.searchStatus
 })
 
 const mapDispatchToProps = {
