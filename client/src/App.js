@@ -9,7 +9,7 @@ import ProductsContainer from "./redux/ProductsContainer";
 import Cart from "./redux/CartContainer.js"
 import Wishlist from "./redux/WishlistContainer"
 import BillingDetails from "./redux/BillingDetailsContainer";
-
+import Contact from "./Components/Contact/Contact";
 const App = () =>{
   return(
     <>
@@ -22,6 +22,7 @@ const App = () =>{
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/signup" element={<AuthorizationContainer/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
         <Route path="/billing-details" element={<BillingDetails/>}/>

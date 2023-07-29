@@ -1,0 +1,16 @@
+.contactSection__firstBlock{
+    padding: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.514);
+}
+
+.firstBlock_container  img {
+    background-color: #DB4444;
+    padding: 5px;
+    border-radius: 20%;
+    flex: 0 1 20%;
+}
+
+
+textarea{
+    color: grey;
+}

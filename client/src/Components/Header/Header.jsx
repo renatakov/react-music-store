@@ -17,9 +17,7 @@ const Header = (props) =>{
             <span>Exclusive</span>
                 <ul>
                     <Link className={s.linkTo} to="/">Home</Link>
-                    <li>
-                        Contact
-                        </li>
+                    <Link className={s.linkTo} to="/contact">Contact</Link>
                         <Link className={s.linkTo} to="/aboutus">About</Link>
                     <Link className={s.linkTo} to="/signup">SignUp</Link>
                 </ul>
