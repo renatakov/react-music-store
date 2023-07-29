@@ -115,7 +115,7 @@ const Home = (props) => {
       clearInterval(interval);
     };
   }, []);
-  
+
   return (
     <>
       <section className={s.firstSection}>

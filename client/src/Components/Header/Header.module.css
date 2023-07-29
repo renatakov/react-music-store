@@ -59,7 +59,15 @@ border-radius: 4px;
 }
 
 
-.linkTo
-{
+.linkTo{
     color: #000;
+}
+
+.logoutBtn{
+    background: url('../../images/logos/logout.svg') no-repeat 50%;
+    border: none;
+    width: 50px;
+    height: 40px;
+    align-self: baseline;
+    cursor: pointer;
 }

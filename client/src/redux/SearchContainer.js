@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import Home from "../Components/HomePage/HomePage";
+import Header from "../Components/Header/Header"
 import {searchProductsAC} from "../redux/reducers/productsReducer"
-import { addToBasketAC, addToWishlistAC, deleteFromBasketAC} from "./reducers/usersReducer";
+//import { addToBasketAC, addToWishlistAC, deleteFromBasketAC} from "./reducers/usersReducer";
 const mapStateToProps = (state) => ({
     accounts: state.authorization.accounts,
     products: state.products.products,
@@ -9,11 +9,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    addToBasket: addToBasketAC,
-    addToWishlist: addToWishlistAC,
-    deleteFromBasket: deleteFromBasketAC,
     searchProducts: searchProductsAC
 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

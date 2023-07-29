@@ -1,4 +1,4 @@
-import Header from "./Components/Header/Header";
+import Header from "./redux/SearchContainer";
 import Footer from "./Components/Footer/Footer"
 import React from 'react';
 import Login from "./redux/LoginContainer";

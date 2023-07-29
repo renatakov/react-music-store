@@ -1,6 +1,16 @@
 import s from "./Header.module.css"
 import { Link } from "react-router-dom";
-const Header = () =>{
+const Header = (props) =>{
+    console.log(props)
+    const handleLogoutBtn = () => {
+        if(sessionStorage.getItem("userAuthKey")){
+            sessionStorage.clear()
+        }
+    }
+    const handleSearch = (newValue) => {
+        props.searchProducts(newValue)
+        console.log(props.searchText)
+    }
     return(
         <header>
             <span>Exclusive</span>
@@ -13,13 +23,17 @@ const Header = () =>{
                     <Link className={s.linkTo} to="/signup">SignUp</Link>
                 </ul>
                 <div className={s.btnSection}>
-            <input id={s.inputSearch} type="text" placeholder="Search"/>
+            <input 
+            value={props.searchText}
+            onChange={(e)=>{handleSearch(e.target.value)}} 
+            id={s.inputSearch} type="text" placeholder="Search"/>
             <Link to="/wishlist">
             <button className={s.wishlistBtn}></button>
             </Link>
             <Link to="/cart">
             <button className={s.cartBtn}></button>
             </Link>
+            {sessionStorage.getItem("userAuthKey") ? <button onClick={handleLogoutBtn} className={s.logoutBtn}></button> : null}
                 </div>
         </header>
     )

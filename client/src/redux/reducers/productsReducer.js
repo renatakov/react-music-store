@@ -171,6 +171,7 @@ const initialState = {
   },
 ],
 search:[],
+searchText:"",
 searchStatus: false
 }
 
@@ -178,17 +179,12 @@ searchStatus: false
 const searchProducts = (state, action) => {
 return{
     ...state,
-    search:[
-        ...state.products.filter((item)=>{
-            if(item.title.toLowerCase().includes(action.inputData.toLowerCase())){
-                return item.id
-            } else{
-                return null
-            }
-        })
-    ]
+    searchStatus: state.searchText !== 0,
+    searchText: action.inputData
+    
 }
 }
+
 
 
 export const productsReducer = (state = initialState, action) => {
@@ -206,3 +202,4 @@ export const searchProductsAC = (inputData)=>({
     type: SEARCH_PRODUCTS,
     inputData
 })
+
