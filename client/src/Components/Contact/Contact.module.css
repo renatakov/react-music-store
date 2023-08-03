@@ -1,14 +1,11 @@
 .contactSection{
     display: flex;
     justify-content: space-evenly;
-    /* align-items: c; */
-    /* margin-bottom: 2rem; */
+    margin-bottom: 1rem;
 }
 
 .contactSection__firstBlock{
     flex: 0 1 25%;
-    height: 353.5px;
-
     padding: 10px;
     box-shadow: 0px 0px 5px 1px rgba(128, 128, 128, 0.514);
 }
@@ -34,7 +31,6 @@
     flex-direction: column;
     padding: 10px;
     flex: 0 1 50%;
-    height: 352px;
     box-shadow: 0px 0px 5px 1px rgba(128, 128, 128, 0.514);
 }
 
@@ -42,6 +38,7 @@
     display: flex;
     align-items: center;
     padding-bottom: 10px;
+
 }
 
 .form_inputs input:not(input:first-child){
@@ -55,6 +52,7 @@ textarea{
     color: grey;
     border: none;
 }
+
 
 .contactSection__form button{
     align-self: flex-end;

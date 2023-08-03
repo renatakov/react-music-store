@@ -32,7 +32,7 @@ const Contact = () =>{
             <div className={s.form_inputs}>
             <input {...register('username', {required: true})} type="text" placeholder="Your Name" />
 <input {...register('useremail', {required: true, pattern: /[a-z]\d+@[a-z]+\.[a-z]{2,4}/})} type="email" placeholder="Your Email" />
-<input {...register('userphone', {required: true, pattern: /^\+[1-9]{1,3}\d{10}/})} type="tel" placeholder="Your Phone" />
+<input {...register('userphone', {required: true, pattern: /\+[1-9]{1,3}\d{10}/})} type="tel" placeholder="Your Phone" />
    </div>
             <textarea {...register('usermessage', {required: false})} name="" id="" cols="50" rows="10">Your Message</textarea>
             <button type="submit">Send Message</button>
