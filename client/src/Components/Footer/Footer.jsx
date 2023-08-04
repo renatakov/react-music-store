@@ -12,12 +12,10 @@ const Footer = () => {
             <div className={s.accountBlock}>
                 <h3>Account</h3>
                 <ul>
-                    <li><a href="#">My Account</a></li>
-                    <li><Link to="/login">Login</Link>/<a href="#">Register</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#">Cart</a></li>
-                    <li><a href="#">Wishlist</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li><Link to="/login">Login</Link>/<Link to="/signup">Register</Link></li>
+                    <li><Link to="/cart">Cart</Link></li>
+                    <li><Link to="/wishlist">Wishlist</Link></li>
+                    <li><Link to="/">Shop</Link></li>
                 </ul>
             </div>
             <div className={s.linksBlock}>
@@ -26,7 +24,7 @@ const Footer = () => {
                     <li><a href="#2">Privacy Policy</a></li>
                     <li><a href="#2">Terms Of Use</a></li>
                     <li><a href="#2">FAQ</a></li>
-                    <li><a href="#2">Contact</a></li>
+                    <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </div>
         </footer>
