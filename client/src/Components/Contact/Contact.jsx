@@ -20,7 +20,7 @@ const Contact = () =>{
                 </div>
                 <hr />
                 <div className={s.firstBlock_container}>
-                <img src={iconMail} alt=""/>
+                <img src={iconMail} alt="iconMail"/>
             <span> Write To Us</span>
             <p>Fill out our form and we will contact you within 24 hours.</p>
             <p>Emails: customer@exclusive.com</p>

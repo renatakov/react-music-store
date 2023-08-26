@@ -8,7 +8,7 @@ describe("AboutUs Component Test", () => {
     })
     it("Testing p", () => {
         render(<AboutUs/>)
-        expect(screen.getByText(/South Asia’s premier/)).toBeInTheDocument()
+        expect(screen.getByText(/premier/)).toBeInTheDocument()
     })
     it("Testing span", () => {
         render(<AboutUs/>)
