@@ -1,4 +1,4 @@
-
+import { nanoid } from "@reduxjs/toolkit"
 import { addAccountAC, authorizationReducer } from "../redux/reducers/usersReducer"
 
 const initialState = {
@@ -13,19 +13,33 @@ const initialState = {
             wishlist:[],
             auth_key: "123_r"
         },
-    ]
+    ],
+    newAcconut:{
+        name: "Jake",
+        age: 25,
+        email: 'jake@gmail.com',
+        password: "123"
+    },
 }
 
 const tempUser = {
     name: "Jake",
     age: 25,
-    email: 'jake@gmail.com'
+    email: 'jake@gmail.com',
+    password: "123"
 }
 
 describe("Test 1", () => {
     it('add user test', () => {
-        const newState = authorizationReducer(initialState, addAccountAC(tempUser))
-    // expect(newState.list.length).toBe(2)
+        const newState = authorizationReducer(
+            initialState, 
+            addAccountAC(
+                tempUser.name,
+                tempUser.email,
+                tempUser.password
+            ))
+    console.log(newState)
+    expect(newState.accounts.length).toBe(2)
     expect(newState.accounts[1].name).toBe(tempUser.name)
     })
 })
