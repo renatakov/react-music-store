@@ -46,7 +46,7 @@ describe("Cart Components Test", () => {
                 email: "renatakov1010@gmail.com",
                 password: "Admin1234@",
                 address: "Kingston 12, United States",
-                basket:[],
+                basket:[2, 7],
                 wishlist:[],
                 auth_key: "123_r"
             },
@@ -56,7 +56,7 @@ describe("Cart Components Test", () => {
                 email: "john123@gmail.com",
                 password: "qwerty345",
                 address: "Wall Street, London",
-                basket:[],
+                basket:[8, 6],
                 wishlist:[],
                 auth_key: "123_jn"
             }
