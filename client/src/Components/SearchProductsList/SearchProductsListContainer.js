@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import SearchProductsList from "./SearchProductsList";
 import {searchProductsAC} from "../../redux/reducers/productsReducer"
-//import { addToBasketAC, addToWishlistAC, deleteFromBasketAC} from "./reducers/usersReducer";
 const mapStateToProps = (state) => ({
     products: state.products.products,
     searchStatus: state.products.searchStatus,

@@ -62,7 +62,7 @@ describe("Billing Details Component Test", ()=>{
         render(
         <BillingDetails accounts={accounts} products={products}/>
         )
-        // expect(screen.getByLabelText("Phone Number")).toBeInTheDocument()
+        
     })
     it("Testing Btn Text", () => {
         render(<BillingDetails accounts={accounts} products={products}/>);

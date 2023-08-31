@@ -3,7 +3,8 @@ import Product from "../Product/Product"
 const SearchProductsList = (props) => {
     const currentList = props.searchStatus ? props.searchArr : props.products
     const Collection = currentList.map((item)=>{
-        return(<Product     id={item.id}
+        return(<Product 
+            id={item.id}
             key={item.id}
             title={item.title}
             img={item.img}

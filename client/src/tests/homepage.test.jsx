@@ -34,6 +34,55 @@ describe("HomePage Component Tests", () => {
             img: "product3",
             price: 370
         },
+        {
+            id: 4,
+            title: 'S-Series Comfort Chair ',
+            stars: 4,
+            sale: true,
+            saleNum: 25,
+            reviews: 99,
+            price: 375
+        },
+        {
+            id: 5,
+            title: 'The north coat ',
+            stars: 5,
+            sale: false,
+            reviews: 65,
+            price: 260
+        },
+        {
+            id: 6,
+            title: 'Gucci duffle bag',
+            stars: 4,
+            sale: false,
+            reviews: 65,
+            price: 960
+        },
+        {
+            id: 7,
+            title: 'RGB liquid CPU Cooler',
+            stars: 4,
+            sale: false,
+            reviews: 65,
+            price: 160
+        },
+        {
+            id: 8,
+            title: 'Small BookSelf',
+            stars: 5,
+            sale: false,
+            reviews: 65,
+            price: 360
+        },
+        {
+            id: 9,
+            title: 'Breed Dry Dog Food',
+            stars: 3,
+            sale: false,
+            reviews: 35,
+            price: 100
+        },
         
     ]
     const accounts = [
@@ -56,7 +105,8 @@ describe("HomePage Component Tests", () => {
             basket:[],
             wishlist:[],
             auth_key: "123_jn"
-        }
+        },
+        
     ]
     it('txt', ()=>{
         render(
@@ -73,5 +123,16 @@ describe("HomePage Component Tests", () => {
             </BrowserRouter>
         )
         expect(screen.getByText(/GUCCI INTENSE OUD EDP/i)).toBeInTheDocument()
+    })
+    it('find products', () => {
+        render(
+            <BrowserRouter>
+            <HomePage accounts={accounts} products={products}/>
+            </BrowserRouter>
+        )
+        expect(screen.getByText("Breed Dry Dog Food")).toBeInTheDocument()
+        expect(screen.getByText("The north coat")).toBeInTheDocument()
+
+
     })
 })
