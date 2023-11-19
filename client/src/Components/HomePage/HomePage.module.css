@@ -3,14 +3,15 @@ body{
 }
 .firstSection {
     display: flex;
+    /* flex: 1 0 50%; */
 }
 .firstSection aside{
     display: flex;
-    flex: 0 1 20%;
-
+    flex-shrink: 1;
 }
 
 .firstSection aside > nav{
+    font-size: 1.5rem;
     padding-right: 2rem;
     border-right: 2px solid #c3c3c3;
 }
@@ -18,7 +19,7 @@ body{
 
 .firstSection__lastBlock{
     margin-left: 1rem;
-    flex: 1 1 auto;
+    flex: 1 0 auto;
     color: #fff;
     background: url('https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907.jpg.landing-big_2x.jpg') no-repeat 20% 80%;
     background-size: cover;
@@ -28,7 +29,7 @@ body{
 
 .firstSection__lastBlock > span{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 2rem;
     line-height: 171%;
     text-align: center;
     color: #FAFAFA;
@@ -36,7 +37,7 @@ body{
 
 .firstSection__lastBlock > h2{
     font-weight: 600;
-    font-size: 28px;
+    font-size: 1.5rem;
     letter-spacing: 0.04em;
     color: #FAFAFA;
 }
@@ -93,6 +94,8 @@ letter-spacing: 0.04em;
     justify-content: space-around;
     align-items: center;
     margin: 2rem;
+    flex-wrap: wrap;
+
 }
 
 .bestSellingProductsContainer{
@@ -126,6 +129,8 @@ letter-spacing: 0.04em;
 }
 
 .fourthSection > img{
+    width: clamp(200px, 60%, 500px);
+    object-fit: contain;
     filter: drop-shadow(10px 10px 45px rgb(220, 217, 217));
 }
 
@@ -149,22 +154,24 @@ letter-spacing: 0.04em;
 border-radius: 4px;
 border: none;
 color:#FAFAFA;
-padding: 1rem 3rem;
+padding: 1rem;
+}
+.fourthSection__firstBlock > h2{
+    font-size: clamp(1rem, 5vw, 2rem);
 }
 .otherProductsContainer{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
 }
 
 
 .otherProductsContainer__firstBlock,
 .otherProductsContainer__secondBlock{
-
     display: flex;
-align-items: center;
-
-justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
 }
 
 .otherProductsContainer__firstBlock > div ,
@@ -262,4 +269,27 @@ align-items: center;
     padding: 0.5rem;
     border-radius: 3rem;
     box-shadow: 0px 0px 0px 10px #686868;
+}
+
+@media (min-width: 375px) and (max-width: 450px) {
+    html{
+        font-size: 12px;
+    }
+    .firstSection__lastBlock,
+    .firstSection aside > nav ul,
+    .firstSection aside > nav{
+        font-size: 1.3rem;
+        padding: 0;
+    }
+    .firstSection__lastBlock{
+        padding: 0.5rem 0 0 0.2rem;
+    }
+    .fifthSection > h4,
+    .sixthSection > h4{
+        padding: 1rem;
+    }
+    .otherProductsContainer__firstBlock,
+    .otherProductsContainer__secondBlock{
+        flex: 0 1 30%;
+    }
 }

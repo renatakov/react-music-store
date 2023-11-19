@@ -1,5 +1,3 @@
-
-
 .productContainer > span:first-child{
     background: #DB4444;
 border-radius: 4px;
@@ -9,12 +7,14 @@ padding: 4px 12px;
 color: #FAFAFA;
 }
 
-
-
 .price{
     color: #000000;
 }
 
+.productImg{
+width: clamp(145px, 10vh, 300px);
+object-fit: scale-down;
+}
 .addToBasketBtn{
     color: #FAFAFA;
     background-color: #000000;
@@ -23,11 +23,6 @@ color: #FAFAFA;
     display: none;
 }
 
-/* .productContainer__firstBlock{
-    margin-top: 5px;
-    padding: 30px;
-    background-color: #d0cbcb4c;
-} */
 
 .productContainer:hover > .addToBasketBtn{
     display: block;
@@ -42,6 +37,8 @@ color: #FAFAFA;
     border-radius: 50px;
 }
 
-/* .deleteFromWishlistBtn{
-    background: ;
-} */
+@media (min-width: 375px) and (max-width: 450px){
+    .productContainer{
+        margin: 0.7rem 0;
+    }
+}
